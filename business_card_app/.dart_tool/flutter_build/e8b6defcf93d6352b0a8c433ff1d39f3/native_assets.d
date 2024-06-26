@@ -1,1 +1,0 @@
- C:\\Users\\omarm\\Desktop\\EngTharwatCourse_Practice\\business_card_app\\.dart_tool\\flutter_build\\e8b6defcf93d6352b0a8c433ff1d39f3\\native_assets.yaml: 
