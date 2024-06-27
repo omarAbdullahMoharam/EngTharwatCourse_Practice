@@ -1,8 +1,9 @@
+import 'package:business_card_app/SimpleUiStyle.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const BusinessCardApp());
+  runApp(const UsingListile());
 }
 
 class BusinessCardApp extends StatelessWidget {

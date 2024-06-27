@@ -64,6 +64,7 @@ flutter:
     - assets/icons/twitter.png
     - assets/icons/google.png
     - assets/07dc9250-a59f-4a34-9576-d88f9cfadeb8.webp
+    - assets/07dc9250-a59f-4a34-9576-d88f9cfadeb8.webp
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
