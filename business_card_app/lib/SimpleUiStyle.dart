@@ -36,7 +36,7 @@ class UsingListile extends StatelessWidget {
             const Text(
               'FLUTTER DEVELOPER',
               style: TextStyle(
-                fontSize: 25,
+                fontSize: 20,
                 color: Color(0xFF6C8090),
               ),
             ),

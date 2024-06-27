@@ -1,9 +1,12 @@
+// ignore: unused_import
 import 'package:business_card_app/SimpleUiStyle.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const UsingListile());
+  //You can uncomment any call runApp method to show the  difference🫡🤍
+  runApp(const BusinessCardApp());
+  // runApp(const UsingListile());
 }
 
 class BusinessCardApp extends StatelessWidget {
@@ -42,7 +45,7 @@ class BusinessCardApp extends StatelessWidget {
             style: TextStyle(
               color: Color(0xFF6C8090),
               fontWeight: FontWeight.bold,
-              fontSize: 18,
+              fontSize: 20,
             ),
           ),
           const SizedBox(
@@ -138,7 +141,7 @@ class BusinessCardApp extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Icon(
-                  CupertinoIcons.mail_solid,
+                  CupertinoIcons.mail,
                   size: 30,
                   color: Color(0xFF2B475E),
                 ),
