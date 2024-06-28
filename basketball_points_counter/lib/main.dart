@@ -144,7 +144,7 @@ class _PointsCounterState extends State<PointsCounter> {
                   ],
                 ),
                 const SizedBox(
-                  width: 40,
+                  width: 5.68,
                   height: 500,
                   child: VerticalDivider(
                     color: Colors.grey,
