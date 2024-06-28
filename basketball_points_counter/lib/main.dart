@@ -27,7 +27,14 @@ class PointsCounter extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const SizedBox(
-              height: 30,
+              height: 10,
+            ),
+            const SizedBox(
+              height: 150,
+              width: 170,
+              child: Image(
+                image: AssetImage('assets/basket.png'),
+              ),
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -204,7 +211,7 @@ class PointsCounter extends StatelessWidget {
               ],
             ),
             const SizedBox(
-              height: 50,
+              height: 30,
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
