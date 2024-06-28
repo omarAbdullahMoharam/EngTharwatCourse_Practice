@@ -1,11 +1,20 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(const PointsCounter());
 }
 
-class PointsCounter extends StatelessWidget {
+class PointsCounter extends StatefulWidget {
   const PointsCounter({super.key});
+
+  @override
+  State<PointsCounter> createState() => _PointsCounterState();
+}
+
+class _PointsCounterState extends State<PointsCounter> {
+  int counterA = 0, counterB = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -54,9 +63,9 @@ class PointsCounter extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const Text(
-                      '0',
-                      style: TextStyle(fontSize: 180),
+                    Text(
+                      '$counterA',
+                      style: const TextStyle(fontSize: 180),
                     ),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
@@ -66,7 +75,12 @@ class PointsCounter extends StatelessWidget {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(3),
                           )),
-                      onPressed: () {},
+                      onPressed: () {
+                        setState(() {
+                          counterA++;
+                        });
+                        log('$counterA 1 added');
+                      },
                       child: const Text(
                         'Add 1 Point',
                         style: TextStyle(
@@ -87,7 +101,12 @@ class PointsCounter extends StatelessWidget {
                           borderRadius: BorderRadius.circular(3),
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        setState(() {
+                          counterA += 2;
+                        });
+                        log('$counterA 2 added');
+                      },
                       child: const Text(
                         'Add 2 Point',
                         style: TextStyle(
@@ -108,7 +127,12 @@ class PointsCounter extends StatelessWidget {
                           borderRadius: BorderRadius.circular(3),
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        setState(() {
+                          counterA += 3;
+                        });
+                        log('$counterA  3 added');
+                      },
                       child: const Text(
                         'Add 3 Point',
                         style: TextStyle(
@@ -142,9 +166,9 @@ class PointsCounter extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const Text(
-                      '0',
-                      style: TextStyle(fontSize: 180),
+                    Text(
+                      '$counterB',
+                      style: const TextStyle(fontSize: 180),
                     ),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
@@ -155,7 +179,12 @@ class PointsCounter extends StatelessWidget {
                           borderRadius: BorderRadius.circular(3),
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        setState(() {
+                          counterB++;
+                        });
+                        log('$counterB 1 added');
+                      },
                       child: const Text(
                         'Add 1 Point',
                         style: TextStyle(
@@ -176,7 +205,12 @@ class PointsCounter extends StatelessWidget {
                           borderRadius: BorderRadius.circular(3),
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        setState(() {
+                          counterB += 2;
+                        });
+                        log('$counterB 2 added');
+                      },
                       child: const Text(
                         'Add 2 Point',
                         style: TextStyle(
@@ -197,7 +231,12 @@ class PointsCounter extends StatelessWidget {
                           borderRadius: BorderRadius.circular(3),
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        setState(() {
+                          counterB += 3;
+                        });
+                        log('$counterB 3 added');
+                      },
                       child: const Text(
                         'Add 3 Point',
                         style: TextStyle(
@@ -222,7 +261,13 @@ class PointsCounter extends StatelessWidget {
                   borderRadius: BorderRadius.circular(3),
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+                setState(() {
+                  counterA = 0;
+                  counterB = 0;
+                });
+                log('$counterA A Zeroed , $counterB B Zeroed');
+              },
               child: const Text(
                 'Reset',
                 style: TextStyle(
