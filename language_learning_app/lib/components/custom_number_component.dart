@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 // ignore: must_be_immutable
 class CustomNumberComponent extends StatelessWidget {
   // ignore: use_key_in_widget_constructors
-  const CustomNumberComponent(this.img,
-      {required this.jabanies, required this.english});
-  final String jabanies;
-  final String english;
-  final String img;
+  CustomNumberComponent(
+      {required this.image, required this.jabanies, required this.english});
+  String jabanies;
+  String english;
+  String image;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,7 +21,7 @@ class CustomNumberComponent extends StatelessWidget {
               width: 100,
               height: 95,
               color: const Color(0xFFFFF3DF),
-              child: Image.asset(img),
+              child: Image.asset(image),
             ),
             Container(
               padding: const EdgeInsets.only(left: 8),

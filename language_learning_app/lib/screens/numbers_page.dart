@@ -1,9 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:language_learning_app/core/custom_number_component.dart';
+import 'package:language_learning_app/models/number.dart';
 
 class NumbersPage extends StatelessWidget {
   const NumbersPage({super.key});
-
+  // => initalizing objects
+  final Number one = const Number(
+      image: 'assets/images/numbers/one.png', Jabanies: 'ichi', English: 'One');
+  final Number two = const Number(
+      image: 'assets/images/numbers/two.png', Jabanies: 'Ni', English: 'Two');
+  final Number three = const Number(
+      image: 'assets/images/numbers/three.png',
+      Jabanies: 'San',
+      English: 'Three');
+  final Number four = const Number(
+      image: 'assets/images/numbers/four.png',
+      Jabanies: 'Shi',
+      English: 'Four');
+  final Number five = const Number(
+      image: 'assets/images/numbers/five.png', Jabanies: 'Go', English: 'Five');
+  final Number six = const Number(
+      image: 'assets/images/numbers/six.png', Jabanies: 'Roku', English: 'Six');
+  final Number seven = const Number(
+      image: 'assets/images/numbers/seven.png',
+      Jabanies: 'Sebun',
+      English: 'Seven');
+  final Number eight = const Number(
+      image: 'assets/images/numbers/eight.png',
+      Jabanies: 'hachi',
+      English: 'Eight');
+  final Number nine = const Number(
+      image: 'assets/images/numbers/nine.png',
+      Jabanies: 'Kyuu',
+      English: 'Nine');
+  final Number ten = const Number(
+      image: 'assets/images/numbers/ten.png', Jabanies: 'Juu', English: 'Ten');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,376 +45,109 @@ class NumbersPage extends StatelessWidget {
         ),
         backgroundColor: Colors.brown,
       ),
-      body: const Column(
-        children: [
-          CustomNumberComponent(
-            'assets/images/numbers/one.png',
-            jabanies: 'ichi',
-            english: 'One',
-          ),
+      body: Container(
+        color: const Color(0xFFF09135),
+        child: ListView(
+          children: [
+            CustomNumberComponent(
+              image: one.image,
+              jabanies: one.Jabanies,
+              english: one.English,
+            ),
 
-          //       Row(
-//           children: [
-//             Container(
-//               width: 100,
-//               height: 100,
-//               color: const Color(0xFFFFF3DF),
-//               child: Image.asset('assets/images/numbers/one.png'),
-//             ),
-//             Container(
-//               padding: const EdgeInsets.only(left: 8),
-//               child: const Column(
-//                 mainAxisSize: MainAxisSize.min,
-//                 children: [
-//                   Text(
-//                     'ichi',
-//                     style: TextStyle(color: Colors.white, fontSize: 22),
-//                   ),
-//                   Text(
-//                     'One',
-//                     style: TextStyle(color: Colors.white, fontSize: 22),
-//                   ),
-//                 ],
-//               ),
-//             ),
-//             const Spacer(
-//               flex: 1,
-//             ),
-//             const Icon(
-//               Icons.play_arrow,
-//               color: Colors.white,
-//               size: 32,
-//             )
-//           ],
-//         ),
-//       ),
-//       ),
-//     );
-//   }
-// }
+            CustomNumberComponent(
+              image: two.image,
+              jabanies: two.Jabanies,
+              english: two.English,
+            ),
 
-          CustomNumberComponent(
-            'assets/images/numbers/two.png',
-            jabanies: 'Ni',
-            english: 'Two',
-          ),
+            CustomNumberComponent(
+              image: four.image,
+              jabanies: three.Jabanies,
+              english: three.English,
+            ),
 
-          //       Row(
-//           children: [
-//             Container(
-//               width: 100,
-//               height: 100,
-//               color: const Color(0xFFFFF3DF),
-//               child: Image.asset('assets/images/numbers/two.png'),
-//             ),
-//             Container(
-//               padding: const EdgeInsets.only(left: 8),
-//               child: const Column(
-//                 mainAxisSize: MainAxisSize.min,
-//                 children: [
-//                   Text(
-//                     'Ni',
-//                     style: TextStyle(color: Colors.white, fontSize: 22),
-//                   ),
-//                   Text(
-//                     'Two',
-//                     style: TextStyle(color: Colors.white, fontSize: 22),
-//                   ),
-//                 ],
-//               ),
-//             ),
-//             const Spacer(
-//               flex: 1,
-//             ),
-//             const Icon(
-//               Icons.play_arrow,
-//               color: Colors.white,
-//               size: 32,
-//             )
-//           ],
-//         ),
-//       ),
-//       ),
-//     );
-//   }
-// }
+            CustomNumberComponent(
+              image: four.image,
+              jabanies: four.Jabanies,
+              english: four.English,
+            ),
 
-          CustomNumberComponent(
-            'assets/images/numbers/three.png',
-            jabanies: 'San',
-            english: 'Three',
-          ),
+            CustomNumberComponent(
+              image: five.image,
+              jabanies: five.Jabanies,
+              english: five.English,
+            ),
 
-          //       Row(
-//           children: [
-//             Container(
-//               width: 100,
-//               height: 100,
-//               color: const Color(0xFFFFF3DF),
-//               child: Image.asset('assets/images/numbers/three.png'),
-//             ),
-//             Container(
-//               padding: const EdgeInsets.only(left: 8),
-//               child: const Column(
-//                 mainAxisSize: MainAxisSize.min,
-//                 children: [
-//                   Text(
-//                     'San',
-//                     style: TextStyle(color: Colors.white, fontSize: 22),
-//                   ),
-//                   Text(
-//                     'Three',
-//                     style: TextStyle(color: Colors.white, fontSize: 22),
-//                   ),
-//                 ],
-//               ),
-//             ),
-//             const Spacer(
-//               flex: 1,
-//             ),
-//             const Icon(
-//               Icons.play_arrow,
-//               color: Colors.white,
-//               size: 32,
-//             )
-//           ],
-//         ),
-//       ),
-//       ),
-//     );
-//   }
-// }
+            CustomNumberComponent(
+              image: six.image,
+              jabanies: six.Jabanies,
+              english: six.English,
+            ),
 
-          CustomNumberComponent(
-            'assets/images/numbers/four.png',
-            jabanies: 'Shi',
-            english: 'Four',
-          ),
+            CustomNumberComponent(
+              image: seven.image,
+              jabanies: seven.Jabanies,
+              english: seven.English,
+            ),
 
-          //       Row(
-//           children: [
-//             Container(
-//               width: 100,
-//               height: 100,
-//               color: const Color(0xFFFFF3DF),
-//               child: Image.asset('assets/images/numbers/four.png'),
-//             ),
-//             Container(
-//               padding: const EdgeInsets.only(left: 8),
-//               child: const Column(
-//                 mainAxisSize: MainAxisSize.min,
-//                 children: [
-//                   Text(
-//                     'Shi',
-//                     style: TextStyle(color: Colors.white, fontSize: 22),
-//                   ),
-//                   Text(
-//                     'Four',
-//                     style: TextStyle(color: Colors.white, fontSize: 22),
-//                   ),
-//                 ],
-//               ),
-//             ),
-//             const Spacer(
-//               flex: 1,
-//             ),
-//             const Icon(
-//               Icons.play_arrow,
-//               color: Colors.white,
-//               size: 32,
-//             )
-//           ],
-//         ),
-//       ),
-//       ),
-//     );
-//   }
-// }
+            CustomNumberComponent(
+              image: eight.image,
+              jabanies: eight.Jabanies,
+              english: eight.English,
+            ),
 
-          CustomNumberComponent(
-            'assets/images/numbers/five.png',
-            jabanies: 'Go',
-            english: 'Five',
-          ),
+            CustomNumberComponent(
+              image: nine.image,
+              jabanies: nine.Jabanies,
+              english: nine.English,
+            ),
+            CustomNumberComponent(
+              image: ten.image,
+              jabanies: ten.Jabanies,
+              english: ten.English,
+            ),
 
-          //       Row(
-//           children: [
-//             Container(
-//               width: 100,
-//               height: 100,
-//               color: const Color(0xFFFFF3DF),
-//               child: Image.asset('assets/images/numbers/five.png'),
-//             ),
-//             Container(
-//               padding: const EdgeInsets.only(left: 8),
-//               child: const Column(
-//                 mainAxisSize: MainAxisSize.min,
-//                 children: [
-//                   Text(
-//                     'Go',
-//                     style: TextStyle(color: Colors.white, fontSize: 22),
-//                   ),
-//                   Text(
-//                     'Five',
-//                     style: TextStyle(color: Colors.white, fontSize: 22),
-//                   ),
-//                 ],
-//               ),
-//             ),
-//             const Spacer(
-//               flex: 1,
-//             ),
-//             const Icon(
-//               Icons.play_arrow,
-//               color: Colors.white,
-//               size: 32,
-//             )
-//           ],
-//         ),
-//       ),
-//       ),
-//     );
-//   }
-// }
-
-          CustomNumberComponent(
-            'assets/images/numbers/six.png',
-            jabanies: 'Roku',
-            english: 'Six',
-          ),
-
-          //       Row(
-//           children: [
-//             Container(
-//               width: 100,
-//               height: 100,
-//               color: const Color(0xFFFFF3DF),
-//               child: Image.asset('assets/images/numbers/six.png'),
-//             ),
-//             Container(
-//               padding: const EdgeInsets.only(left: 8),
-//               child: const Column(
-//                 mainAxisSize: MainAxisSize.min,
-//                 children: [
-//                   Text(
-//                     'Roku',
-//                     style: TextStyle(color: Colors.white, fontSize: 22),
-//                   ),
-//                   Text(
-//                     'Six',
-//                     style: TextStyle(color: Colors.white, fontSize: 22),
-//                   ),
-//                 ],
-//               ),
-//             ),
-//             const Spacer(
-//               flex: 1,
-//             ),
-//             const Icon(
-//               Icons.play_arrow,
-//               color: Colors.white,
-//               size: 32,
-//             )
-//           ],
-//         ),
-//       ),
-//       ),
-//     );
-//   }
-// }
-
-          CustomNumberComponent(
-            'assets/images/numbers/seven.png',
-            jabanies: 'Sebun',
-            english: 'Seven',
-          ),
-
-          //       Row(
-//           children: [
-//             Container(
-//               width: 100,
-//               height: 100,
-//               color: const Color(0xFFFFF3DF),
-//               child: Image.asset( 'assets/images/numbers/seven.png'),
-//             ),
-//             Container(
-//               padding: const EdgeInsets.only(left: 8),
-//               child: const Column(
-//                 mainAxisSize: MainAxisSize.min,
-//                 children: [
-//                   Text(
-//                     'Sebun',
-//                     style: TextStyle(color: Colors.white, fontSize: 22),
-//                   ),
-//                   Text(
-//                     'Seven',
-//                     style: TextStyle(color: Colors.white, fontSize: 22),
-//                   ),
-//                 ],
-//               ),
-//             ),
-//             const Spacer(
-//               flex: 1,
-//             ),
-//             const Icon(
-//               Icons.play_arrow,
-//               color: Colors.white,
-//               size: 32,
-//             )
-//           ],
-//         ),
-//       ),
-//       ),
-//     );
-//   }
-// }
-
-          CustomNumberComponent(
-            'assets/images/numbers/eight.png',
-            jabanies: 'hachi',
-            english: 'Eight',
-          ),
-
-          //       Row(
-//           children: [
-//             Container(
-//               width: 100,
-//               height: 100,
-//               color: const Color(0xFFFFF3DF),
-//               child: Image.asset('assets/images/numbers/eight.png'),
-//             ),
-//             Container(
-//               padding: const EdgeInsets.only(left: 8),
-//               child: const Column(
-//                 mainAxisSize: MainAxisSize.min,
-//                 children: [
-//                   Text(
-//                     'Eight',
-//                     style: TextStyle(color: Colors.white, fontSize: 22),
-//                   ),
-//                   Text(
-//                     'Eight',
-//                     style: TextStyle(color: Colors.white, fontSize: 22),
-//                   ),
-//                 ],
-//               ),
-//             ),
-//             const Spacer(
-//               flex: 1,
-//             ),
-//             const Icon(
-//               Icons.play_arrow,
-//               color: Colors.white,
-//               size: 32,
-//             )
-//           ],
-//         ),
-//       ),
-//       ),
-//     );
-//   }
-// }
-        ],
+            //           children: [
+            //             Container(
+            //               width: 100,
+            //               height: 100,
+            //               color: const Color(0xFFFFF3DF),
+            //               child: Image.asset('assets/images/numbers/eight.png'),
+            //             ),
+            //             Container(
+            //               padding: const EdgeInsets.only(left: 8),
+            //               child: const Column(
+            //                 mainAxisSize: MainAxisSize.min,
+            //                 children: [
+            //                   Text(
+            //                     'Eight',
+            //                     style: TextStyle(color: Colors.white, fontSize: 22),
+            //                   ),
+            //                   Text(
+            //                     'Eight',
+            //                     style: TextStyle(color: Colors.white, fontSize: 22),
+            //                   ),
+            //                 ],
+            //               ),
+            //             ),
+            //             const Spacer(
+            //               flex: 1,
+            //             ),
+            //             const Icon(
+            //               Icons.play_arrow,
+            //               color: Colors.white,
+            //               size: 32,
+            //             )
+            //           ],
+            //         ),
+            //       ),
+            //       ),
+            //     );
+            //   }
+            // }
+          ],
+        ),
       ),
     );
   }

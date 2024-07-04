@@ -42,7 +42,7 @@ class HomePage extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (BuildContext context) {
-                  return const NumbersPage();
+                  return NumbersPage();
                 }),
               );
               log('Number page navigator');
