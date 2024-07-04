@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:language_learning_app/core/custom_number_component.dart';
+import 'package:language_learning_app/components/custom_number_component.dart';
 import 'package:language_learning_app/models/number.dart';
 
 class NumbersPage extends StatelessWidget {
@@ -50,102 +50,65 @@ class NumbersPage extends StatelessWidget {
         child: ListView(
           children: [
             CustomNumberComponent(
-              image: one.image,
-              jabanies: one.Jabanies,
-              english: one.English,
-            ),
-
-            CustomNumberComponent(
-              image: two.image,
-              jabanies: two.Jabanies,
-              english: two.English,
-            ),
-
-            CustomNumberComponent(
-              image: four.image,
-              jabanies: three.Jabanies,
-              english: three.English,
-            ),
-
-            CustomNumberComponent(
-              image: four.image,
-              jabanies: four.Jabanies,
-              english: four.English,
-            ),
-
-            CustomNumberComponent(
-              image: five.image,
-              jabanies: five.Jabanies,
-              english: five.English,
-            ),
-
-            CustomNumberComponent(
-              image: six.image,
-              jabanies: six.Jabanies,
-              english: six.English,
-            ),
-
-            CustomNumberComponent(
-              image: seven.image,
-              jabanies: seven.Jabanies,
-              english: seven.English,
-            ),
-
-            CustomNumberComponent(
-              image: eight.image,
-              jabanies: eight.Jabanies,
-              english: eight.English,
-            ),
-
-            CustomNumberComponent(
-              image: nine.image,
-              jabanies: nine.Jabanies,
-              english: nine.English,
+              number: one,
+              // image: one.image,
+              // jabanies: one.Jabanies,
+              // english: one.English,
             ),
             CustomNumberComponent(
-              image: ten.image,
-              jabanies: ten.Jabanies,
-              english: ten.English,
+              number: two,
+              // image: two.image,
+              // jabanies: two.Jabanies,
+              // english: two.English,
             ),
-
-            //           children: [
-            //             Container(
-            //               width: 100,
-            //               height: 100,
-            //               color: const Color(0xFFFFF3DF),
-            //               child: Image.asset('assets/images/numbers/eight.png'),
-            //             ),
-            //             Container(
-            //               padding: const EdgeInsets.only(left: 8),
-            //               child: const Column(
-            //                 mainAxisSize: MainAxisSize.min,
-            //                 children: [
-            //                   Text(
-            //                     'Eight',
-            //                     style: TextStyle(color: Colors.white, fontSize: 22),
-            //                   ),
-            //                   Text(
-            //                     'Eight',
-            //                     style: TextStyle(color: Colors.white, fontSize: 22),
-            //                   ),
-            //                 ],
-            //               ),
-            //             ),
-            //             const Spacer(
-            //               flex: 1,
-            //             ),
-            //             const Icon(
-            //               Icons.play_arrow,
-            //               color: Colors.white,
-            //               size: 32,
-            //             )
-            //           ],
-            //         ),
-            //       ),
-            //       ),
-            //     );
-            //   }
-            // }
+            CustomNumberComponent(
+              number: three,
+              // image: three.image,
+              // jabanies: three.Jabanies,
+              // english: three.English,
+            ),
+            CustomNumberComponent(
+              number: four,
+              // image: four.image,
+              // jabanies: four.Jabanies,
+              // english: four.English,
+            ),
+            CustomNumberComponent(
+              number: five,
+              // image: five.image,
+              // jabanies: five.Jabanies,
+              // english: five.English,
+            ),
+            CustomNumberComponent(
+              number: six,
+              // image: six.image,
+              // jabanies: six.Jabanies,
+              // english: six.English,
+            ),
+            CustomNumberComponent(
+              number: seven,
+              // image: seven.image,
+              // jabanies: seven.Jabanies,
+              // english: seven.English,
+            ),
+            CustomNumberComponent(
+              number: eight,
+              // image: eight.image,
+              // jabanies: eight.Jabanies,
+              // english: eight.English,
+            ),
+            CustomNumberComponent(
+              number: nine,
+              // image: nine.image,
+              // jabanies: nine.Jabanies,
+              // english: nine.English,
+            ),
+            CustomNumberComponent(
+              number: ten,
+              // image: ten.image,
+              // jabanies: ten.Jabanies,
+              // english: ten.English,
+            ),
           ],
         ),
       ),

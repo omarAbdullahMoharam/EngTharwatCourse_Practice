@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:language_learning_app/models/number.dart';
 
-// ignore: must_be_immutable
 class CustomNumberComponent extends StatelessWidget {
-  // ignore: use_key_in_widget_constructors
-  CustomNumberComponent(
-      {required this.image, required this.jabanies, required this.english});
-  String jabanies;
-  String english;
-  String image;
+  // CustomNumberComponent(
+  //     {required this.image, required this.jabanies, required this.english});
+
+  const CustomNumberComponent({required this.number, super.key});
+  final Number number;
+  // String jabanies;
+  // String english;
+  // String image;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,7 +23,7 @@ class CustomNumberComponent extends StatelessWidget {
               width: 100,
               height: 95,
               color: const Color(0xFFFFF3DF),
-              child: Image.asset(image),
+              child: Image.asset(number.image),
             ),
             Container(
               padding: const EdgeInsets.only(left: 8),
@@ -29,11 +31,11 @@ class CustomNumberComponent extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    jabanies,
+                    number.Jabanies,
                     style: const TextStyle(color: Colors.white, fontSize: 22),
                   ),
                   Text(
-                    english,
+                    number.English,
                     style: const TextStyle(color: Colors.white, fontSize: 22),
                   ),
                 ],
