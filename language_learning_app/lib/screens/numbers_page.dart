@@ -1,50 +1,65 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:language_learning_app/components/custom_number_component.dart';
 import 'package:language_learning_app/models/number.dart';
 
 class NumbersPage extends StatelessWidget {
   NumbersPage({super.key});
-  // inintalize a list to store objects as a group
+  // initialize a list to store objects as a group
   List<Number> numbers = const [
     Number(
         image: 'assets/images/numbers/one.png',
-        Jabanies: 'ichi',
-        English: 'One'),
+        Japanese: 'ichi',
+        English: 'One',
+        soundPath: 'sounds/numbers/one_sound.mp3'),
     Number(
-        image: 'assets/images/numbers/two.png', Jabanies: 'Ni', English: 'Two'),
+        image: 'assets/images/numbers/two.png',
+        Japanese: 'Ni',
+        English: 'Two',
+        soundPath: 'sounds/numbers/two_sound.mp3'),
     Number(
         image: 'assets/images/numbers/three.png',
-        Jabanies: 'San',
-        English: 'Three'),
+        Japanese: 'San',
+        English: 'Three',
+        soundPath: 'sounds/numbers/three_sound.mp3'),
     Number(
         image: 'assets/images/numbers/four.png',
-        Jabanies: 'Shi',
-        English: 'Four'),
+        Japanese: 'Shi',
+        English: 'Four',
+        soundPath: 'sounds/numbers/four_sound.mp3'),
     Number(
         image: 'assets/images/numbers/five.png',
-        Jabanies: 'Go',
-        English: 'Five'),
+        Japanese: 'Go',
+        English: 'Five',
+        soundPath: 'sounds/numbers/five_sound.mp3'),
     Number(
         image: 'assets/images/numbers/six.png',
-        Jabanies: 'Roku',
-        English: 'Six'),
+        Japanese: 'Roku',
+        English: 'Six',
+        soundPath: 'sounds/numbers/six_sound.mp3'),
     Number(
         image: 'assets/images/numbers/seven.png',
-        Jabanies: 'Sebun',
-        English: 'Seven'),
+        Japanese: 'Sebun',
+        English: 'Seven',
+        soundPath: 'sounds/numbers/seven_sound.mp3'),
     Number(
         image: 'assets/images/numbers/eight.png',
-        Jabanies: 'hachi',
-        English: 'Eight'),
+        Japanese: 'hachi',
+        English: 'Eight',
+        soundPath: 'sounds/numbers/eight_sound.mp3'),
     Number(
         image: 'assets/images/numbers/nine.png',
-        Jabanies: 'Kyuu',
-        English: 'Nine'),
+        Japanese: 'Kyuu',
+        English: 'Nine',
+        soundPath: 'sounds/numbers/nine_sound.mp3'),
     Number(
-        image: 'assets/images/numbers/ten.png', Jabanies: 'Juu', English: 'Ten')
+      image: 'assets/images/numbers/ten.png',
+      Japanese: 'Juu',
+      English: 'Ten',
+      soundPath: 'sounds/numbers/ten_sound.mp3',
+    )
   ];
+
 //=> Hint 🚨
 // ListView ==>  بتبني كل الليست مره واحده وده بيقلل من البيرفورمانس ومش لازم يكونو زي بعض ممكن تبني ويدجتس مختلفه عادي
 // listView.builder ==>  بيبني على قد الاسكرين وبس ولو احتاجت تاني اما تعمل اسكرول بيبدأ يبني الباقي ولازم الويدجتس تكون متكرره يعني كلهم نفس الديزاين
@@ -59,7 +74,7 @@ class NumbersPage extends StatelessWidget {
         ),
         backgroundColor: Colors.brown,
       ),
-      //==>🚨🚨Hard coded Example to show how to make a dynamic listview builder
+      //==>🚨🚨Hard coded Example to show how to make a dynamic listView builder
       //this is the calling to start the widget building by:
       //Passing the callItemsBuilder function as a children of listview
       // body: ListView(
@@ -77,6 +92,7 @@ class NumbersPage extends StatelessWidget {
         itemBuilder: (context, index) {
           log('$index times');
           // returns each widget item of the passed list
+
           return CustomNumberComponent(number: numbers[index]);
         },
       ),
@@ -84,7 +100,7 @@ class NumbersPage extends StatelessWidget {
   }
 }
 
-// 🤷‍♂️How Listview.builder works🤔
+// 🤷‍♂️How Listview.builder works 🤔
 //the logic of how Listview.builder works
 List<Widget> callItemsBuilder(List<Number> numbers) {
   //empty list to fill the built widgets in the builder iterates on it to show

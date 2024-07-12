@@ -1,13 +1,14 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:language_learning_app/models/number.dart';
 
 class CustomNumberComponent extends StatelessWidget {
   // CustomNumberComponent(
-  //     {required this.image, required this.jabanies, required this.english});
-
-  const CustomNumberComponent({required this.number, super.key});
+  //     {required this.image, required this.Japanese, required this.english});
+  final player = AudioPlayer();
+  CustomNumberComponent({required this.number, super.key});
   final Number number;
-  // String jabanies;
+  // String japanese;
   // String english;
   // String image;
   @override
@@ -31,7 +32,7 @@ class CustomNumberComponent extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    number.Jabanies,
+                    number.Japanese,
                     style: const TextStyle(color: Colors.white, fontSize: 22),
                   ),
                   Text(
@@ -44,10 +45,15 @@ class CustomNumberComponent extends StatelessWidget {
             const Spacer(
               flex: 1,
             ),
-            const Icon(
-              Icons.play_arrow,
-              color: Colors.white,
-              size: 32,
+            IconButton.outlined(
+              onPressed: () async {
+                player.play(AssetSource(number.soundPath));
+              },
+              icon: const Icon(
+                Icons.play_arrow,
+                color: Colors.white,
+                size: 32,
+              ),
             ),
           ],
         ),

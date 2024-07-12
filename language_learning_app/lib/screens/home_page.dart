@@ -60,7 +60,7 @@ class HomePage extends StatelessWidget {
               );
               log('Family Members');
             },
-            text: 'Family Members',
+            text: 'Family Members Navigator',
             color: const Color(0xff528032),
           ),
           CustomSlice(
@@ -71,7 +71,7 @@ class HomePage extends StatelessWidget {
                   return const ColorsPage();
                 }),
               );
-              log('Colors');
+              log('Colors Navigator');
             },
             text: 'Colors',
             color: const Color(0xFF7D40A2),
@@ -84,7 +84,7 @@ class HomePage extends StatelessWidget {
                   return const PhrasesPage();
                 }),
               );
-              log('Phrases');
+              log('Phrases Navigator');
             },
             text: 'Phrases',
             color: const Color(0xFF47A5CB),
