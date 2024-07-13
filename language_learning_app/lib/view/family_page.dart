@@ -77,7 +77,7 @@ class FamilyMembersPage extends StatelessWidget {
           'Family Members',
           style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: const Color(0xFF528032),
+        backgroundColor: const Color(0xFF452E27),
       ),
       body: ListView.builder(
           itemCount: members.length,
