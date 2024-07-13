@@ -2,10 +2,10 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:language_learning_app/components/custom_slice.dart';
-import 'package:language_learning_app/screens/colors_page.dart';
-import 'package:language_learning_app/screens/family_page.dart';
-import 'package:language_learning_app/screens/numbers_page.dart';
-import 'package:language_learning_app/screens/phrases_page.dart';
+import 'package:language_learning_app/view/colors_page.dart';
+import 'package:language_learning_app/view/family_page.dart';
+import 'package:language_learning_app/view/numbers_page.dart';
+import 'package:language_learning_app/view/phrases_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -55,12 +55,12 @@ class HomePage extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (BuildContext context) {
-                  return const FamilyMembersPage();
+                  return FamilyMembersPage();
                 }),
               );
-              log('Family Members');
+              log('Family Members Navigator');
             },
-            text: 'Family Members Navigator',
+            text: 'Family Members ',
             color: const Color(0xff528032),
           ),
           CustomSlice(

@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'package:language_learning_app/components/custom_number_component.dart';
+import 'package:flutter/widgets.dart';
+import 'package:language_learning_app/components/custom_item_component.dart';
 import 'package:language_learning_app/models/number.dart';
 
 class NumbersPage extends StatelessWidget {
@@ -49,12 +50,12 @@ class NumbersPage extends StatelessWidget {
         soundPath: 'sounds/numbers/eight_sound.mp3'),
     Number(
         image: 'assets/images/numbers/nine.png',
-        Japanese: 'Kyuu',
+        Japanese: 'Kyū',
         English: 'Nine',
         soundPath: 'sounds/numbers/nine_sound.mp3'),
     Number(
       image: 'assets/images/numbers/ten.png',
-      Japanese: 'Juu',
+      Japanese: 'Jū',
       English: 'Ten',
       soundPath: 'sounds/numbers/ten_sound.mp3',
     )
@@ -90,10 +91,15 @@ class NumbersPage extends StatelessWidget {
         //pointer and context to recognize the widget
         //iterator index to iterate on the passed list
         itemBuilder: (context, index) {
-          log('$index times');
+          log('_______________________\nSlice number $index \n_______________________');
           // returns each widget item of the passed list
 
-          return CustomNumberComponent(number: numbers[index]);
+          return CustomItemComponent.numbers(
+            number: numbers[index],
+            color: const Color(
+              0xFFF09135,
+            ),
+          );
         },
       ),
     );
@@ -107,7 +113,12 @@ List<Widget> callItemsBuilder(List<Number> numbers) {
   //on the Numbers Screen
   List<Widget> filledList = [];
   for (int i = 0; i < numbers.length; i++) {
-    filledList.add(CustomNumberComponent(number: numbers[i]));
+    filledList.add(
+      CustomItemComponent.numbers(
+        number: numbers[i],
+        color: const Color(0xFFF09135),
+      ),
+    );
   }
   return filledList;
 }
