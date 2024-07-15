@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:language_learning_app/components/custom_item_component.dart';
 import 'package:language_learning_app/models/family.dart';
 
+// ignore: must_be_immutable
 class FamilyMembersPage extends StatelessWidget {
   List<Family> members = const [
     Family(

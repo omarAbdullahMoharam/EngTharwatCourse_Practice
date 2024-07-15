@@ -1,10 +1,9 @@
-import 'dart:developer';
-
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:language_learning_app/models/family.dart';
 import 'package:language_learning_app/models/number.dart';
 
+// ignore: must_be_immutable
 class CustomItemComponent extends StatelessWidget {
   int numWorking = 2, memWorking = 2;
   Color color;
