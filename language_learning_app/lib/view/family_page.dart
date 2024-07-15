@@ -68,7 +68,6 @@ class FamilyMembersPage extends StatelessWidget {
       soundPath: 'sounds/family_members/grand_mother.wav',
     ),
   ];
-  FamilyMembersPage({super.key});
 
   @override
   Widget build(BuildContext context) {

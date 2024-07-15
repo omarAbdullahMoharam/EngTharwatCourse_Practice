@@ -1,5 +1,5 @@
-class Colors {
-  Colors(
+class colors {
+  const colors(
       {required this.JabColor,
       required this.EngColor,
       required this.image,

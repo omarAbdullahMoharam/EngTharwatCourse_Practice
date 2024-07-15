@@ -1,12 +1,15 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:language_learning_app/models/colors.dart';
 import 'package:language_learning_app/models/family.dart';
 import 'package:language_learning_app/models/number.dart';
 
 // ignore: must_be_immutable
 class CustomItemComponent extends StatelessWidget {
-  int numWorking = 2, memWorking = 2;
   Color color;
+  final Number? number;
+  final Family? member;
+  final colors? colorsStyle;
   // CustomItemComponent(
   //     {required this.image, required this.Japanese, required this.english});
   final player = AudioPlayer();
@@ -15,6 +18,7 @@ class CustomItemComponent extends StatelessWidget {
     required this.color,
     super.key,
   })  : member = null,
+        colorsStyle = null,
         assert(number != null);
 
   CustomItemComponent.members({
@@ -22,10 +26,13 @@ class CustomItemComponent extends StatelessWidget {
     required this.color,
     super.key,
   })  : number = null,
+        colorsStyle = null,
         assert(member != null);
-
-  final Number? number;
-  final Family? member;
+  CustomItemComponent.colors(
+      {required this.colorsStyle, required this.color, super.key})
+      : number = null,
+        member = null,
+        assert(colorsStyle != null);
 
   // String japanese;
   // String english;
@@ -43,7 +50,8 @@ class CustomItemComponent extends StatelessWidget {
               width: 100,
               height: 95,
               color: const Color(0xFFFFF3DF),
-              child: Image.asset(number?.image ?? member!.image),
+              child: Image.asset(
+                  number?.image ?? member?.image ?? colorsStyle!.image),
             ),
             Container(
               padding: const EdgeInsets.only(left: 8),
@@ -52,11 +60,13 @@ class CustomItemComponent extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    number?.Japanese ?? member!.JabRole,
+                    number?.Japanese ??
+                        member?.JabRole ??
+                        colorsStyle!.JabColor,
                     style: const TextStyle(color: Colors.white, fontSize: 22),
                   ),
                   Text(
-                    number?.English ?? member!.EngRole,
+                    number?.English ?? member?.EngRole ?? colorsStyle!.EngColor,
                     style: const TextStyle(color: Colors.white, fontSize: 22),
                   ),
                 ],
@@ -67,8 +77,9 @@ class CustomItemComponent extends StatelessWidget {
             ),
             IconButton.outlined(
               onPressed: () async {
-                player
-                    .play(AssetSource(number?.soundPath ?? member!.soundPath));
+                player.play(AssetSource(number?.soundPath ??
+                    member?.soundPath ??
+                    colorsStyle!.soundPath));
               },
               icon: const Icon(
                 Icons.play_arrow,

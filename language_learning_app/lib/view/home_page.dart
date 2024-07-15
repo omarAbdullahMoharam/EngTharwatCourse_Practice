@@ -68,7 +68,7 @@ class HomePage extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (BuildContext context) {
-                  return const ColorsPage();
+                  return ColorsPage();
                 }),
               );
               log('Colors Navigator');
