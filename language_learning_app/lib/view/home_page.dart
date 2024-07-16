@@ -81,7 +81,7 @@ class HomePage extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (BuildContext context) {
-                  return const PhrasesPage();
+                  return PhrasesPage();
                 }),
               );
               log('Phrases Navigator');

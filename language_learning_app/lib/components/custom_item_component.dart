@@ -6,10 +6,11 @@ import 'package:language_learning_app/models/number.dart';
 
 // ignore: must_be_immutable
 class CustomItemComponent extends StatelessWidget {
-  Color color;
+  final Color color;
   final Number? number;
   final Family? member;
   final colors? colorsStyle;
+
   // CustomItemComponent(
   //     {required this.image, required this.Japanese, required this.english});
   final player = AudioPlayer();
