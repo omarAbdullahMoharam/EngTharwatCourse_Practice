@@ -1,49 +1,53 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:language_learning_app/components/custom_item_component.dart';
-import 'package:language_learning_app/models/colors.dart';
+import 'package:language_learning_app/models/item_model.dart';
 
 // ignore: use_key_in_widget_constructors, must_be_immutable
 class ColorsPage extends StatelessWidget {
-  List<colors> colorsItem = const [
-    colors(
-        JabColor: 'Aka',
-        EngColor: 'Red',
-        image: 'assets/images/colors/red.png',
-        soundPath: 'sounds/colors/red.wav'),
-    colors(
-        JabColor: 'Shiro',
-        EngColor: 'White',
-        image: 'assets/images/colors/white.png',
-        soundPath: 'sounds/colors/white.wav'),
-    colors(
-        JabColor: 'Midori',
-        EngColor: 'Green',
+  List<ItemModel> colorsItem = const [
+    ItemModel(
+      image: 'assets/images/colors/red.png',
+      JabTitle: 'Aka',
+      EngTitle: 'Red',
+      soundPath: 'sounds/colors/red.wav',
+    ),
+    ItemModel(
+      image: 'assets/images/colors/white.png',
+      JabTitle: 'Shiro',
+      EngTitle: 'White',
+      soundPath: 'sounds/colors/white.wav',
+    ),
+    ItemModel(
         image: 'assets/images/colors/green.png',
+        JabTitle: 'Midori',
+        EngTitle: 'Green',
         soundPath: 'assets/sounds/colors/green.wav'),
-    colors(
-        JabColor: 'Kuro',
-        EngColor: 'Black',
+    ItemModel(
         image: 'assets/images/colors/black.png',
+        JabTitle: 'Kuro',
+        EngTitle: 'Black',
         soundPath: 'sounds/colors/black.wav'),
-    colors(
-        JabColor: 'Ki-iro',
-        EngColor: 'Yellow',
+    ItemModel(
         image: 'assets/images/colors/yellow.png',
+        JabTitle: 'Ki-iro',
+        EngTitle: 'Yellow',
         soundPath: 'sounds/colors/yellow.wav'),
-    colors(
-        JabColor: 'Haiiro',
-        EngColor: 'Gray',
+    ItemModel(
         image: 'assets/images/colors/gray.png',
+        JabTitle: 'Haiiro',
+        EngTitle: 'Gray',
         soundPath: 'sounds/colors/gray.wav'),
-    colors(
-        JabColor: 'Kusunda-iro',
-        EngColor: 'Dusty',
+    ItemModel(
         image: 'assets/images/colors/dusty_yellow.png',
+        JabTitle: 'Kusunda-iro',
+        EngTitle: 'Dusty',
         soundPath: 'sounds/colors/dusty_yellow.wav'),
-    colors(
-        JabColor: 'Chairo',
-        EngColor: 'Brown',
+    ItemModel(
         image: 'assets/images/colors/brown.png',
+        JabTitle: 'Chairo',
+        EngTitle: 'Brown',
         soundPath: 'sounds/colors/brown.wav'),
   ];
   @override
@@ -59,8 +63,9 @@ class ColorsPage extends StatelessWidget {
         body: ListView.builder(
             itemCount: colorsItem.length,
             itemBuilder: (context, index) {
-              return CustomItemComponent.colors(
-                  colorsStyle: colorsItem[index], color: Colors.indigoAccent);
+              log('\nSlice number $index _______________________');
+              return CustomItemComponent(
+                  colorsItem[index], Colors.indigoAccent);
             }));
   }
 }

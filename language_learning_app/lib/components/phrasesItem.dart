@@ -1,15 +1,15 @@
-import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import 'package:language_learning_app/models/phrases.dart';
+import 'package:language_learning_app/models/item_model.dart';
+import 'package:language_learning_app/services/audio_manager.dart';
 
 class PhrasesItem extends StatelessWidget {
-  final Phrases statement;
+  final ItemModel statement;
   final Color color;
   // ignore: use_key_in_widget_constructors
 
-  AudioPlayer player = AudioPlayer();
+  AudioManager player = AudioManager();
 
-  PhrasesItem({required this.statement, required this.color});
+  PhrasesItem({super.key, required this.statement, required this.color});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -26,17 +26,17 @@ class PhrasesItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                statement.Jabphrase,
+                statement.JabTitle,
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 17,
                 ),
               ),
-              const SizedBox(
-                  // height: 5,
-                  ),
+              // const SizedBox(
+              //     // height: 5,
+              //     ),
               Text(
-                statement.Engphrase,
+                statement.EngTitle,
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 19,
@@ -48,11 +48,11 @@ class PhrasesItem extends StatelessWidget {
             ],
           ),
           const Spacer(
-            flex: 9,
+            flex: 8,
           ),
           IconButton.outlined(
             onPressed: () async {
-              player.play(AssetSource(statement.soundPath));
+              await player.playSound(statement.soundPath);
             },
             icon: const Icon(
               Icons.play_arrow,

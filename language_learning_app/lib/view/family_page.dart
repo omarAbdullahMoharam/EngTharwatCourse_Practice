@@ -2,68 +2,68 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:language_learning_app/components/custom_item_component.dart';
-import 'package:language_learning_app/models/family.dart';
+import 'package:language_learning_app/models/item_model.dart';
 
 // ignore: must_be_immutable
 class FamilyMembersPage extends StatelessWidget {
-  List<Family> members = const [
-    Family(
-      JabRole: 'chich',
-      EngRole: 'Father',
+  List<ItemModel> members = const [
+    ItemModel(
       image: 'assets/images/family_members/father.png',
+      JabTitle: 'chich',
+      EngTitle: 'Father',
       soundPath: 'sounds/family_members/father.wav',
     ),
-    Family(
-      JabRole: 'Hahaoya',
-      EngRole: 'Mother',
+    ItemModel(
+      JabTitle: 'Hahaoya',
+      EngTitle: 'Mother',
       image: 'assets/images/family_members/family_mother.png',
       soundPath: 'sounds/family_members/mother.wav',
     ),
-    Family(
-      JabRole: 'Musuko',
-      EngRole: 'Son',
+    ItemModel(
+      JabTitle: 'Musuko',
+      EngTitle: 'Son',
       image: 'assets/images/family_members/daughter.png',
       soundPath: 'sounds/family_members/son.wav',
     ),
-    Family(
-      JabRole: 'Musume',
-      EngRole: 'Daughter',
+    ItemModel(
+      JabTitle: 'Musume',
+      EngTitle: 'Daughter',
       image: 'assets/images/family_members/daughter.png',
       soundPath: 'sounds/family_members/daughter.wav',
     ),
-    Family(
-      JabRole: 'Nisan',
-      EngRole: 'Older Brother',
+    ItemModel(
+      JabTitle: 'Nisan',
+      EngTitle: 'Older Brother',
       image: 'assets/images/family_members/older_brother.png',
       soundPath: 'sounds/family_members/older_bother.wav',
     ),
-    Family(
-      JabRole: 'Ane',
-      EngRole: 'Older Sister',
+    ItemModel(
+      JabTitle: 'Ane',
+      EngTitle: 'Older Sister',
       image: 'assets/images/family_members/older_sister.png',
       soundPath: 'sounds/family_members/older_sister.wav',
     ),
-    Family(
-      JabRole: 'Ototo',
-      EngRole: 'Younger brother',
+    ItemModel(
+      JabTitle: 'Ototo',
+      EngTitle: 'Younger brother',
       image: 'assets/images/family_members/younger_brother.png',
       soundPath: 'sounds/family_members/younger_brother.wav',
     ),
-    Family(
-      JabRole: 'Emouto',
-      EngRole: 'Younger Sister',
+    ItemModel(
+      JabTitle: 'Emouto',
+      EngTitle: 'Younger Sister',
       image: 'assets/images/family_members/younger_sister.png',
       soundPath: 'sounds/family_members/younger_sister.wav',
     ),
-    Family(
-      JabRole: 'Ojisan',
-      EngRole: 'Grand Father',
+    ItemModel(
+      JabTitle: 'Ojisan',
+      EngTitle: 'Grand Father',
       image: 'assets/images/family_members/grandfather.png',
       soundPath: 'sounds/family_members/grand_father.wav',
     ),
-    Family(
-      JabRole: 'Sobo',
-      EngRole: 'Grand Mother',
+    ItemModel(
+      JabTitle: 'Sobo',
+      EngTitle: 'Grand Mother',
       image: 'assets/images/family_members/grandmother.png',
       soundPath: 'sounds/family_members/grand_mother.wav',
     ),
@@ -82,10 +82,10 @@ class FamilyMembersPage extends StatelessWidget {
       body: ListView.builder(
           itemCount: members.length,
           itemBuilder: (context, index) {
-            log('_______________________\nSlice number $index \n_______________________');
-            return CustomItemComponent.members(
-              member: members[index],
-              color: const Color(
+            log('\nSlice number $index _______________________');
+            return CustomItemComponent(
+              members[index],
+              const Color(
                 0xFF528032,
               ),
             );

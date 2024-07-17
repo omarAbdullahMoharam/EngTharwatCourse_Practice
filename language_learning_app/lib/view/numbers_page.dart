@@ -3,61 +3,61 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:language_learning_app/components/custom_item_component.dart';
-import 'package:language_learning_app/models/number.dart';
+import 'package:language_learning_app/models/item_model.dart';
 
 class NumbersPage extends StatelessWidget {
   NumbersPage({super.key});
   // initialize a list to store objects as a group
-  List<Number> numbers = const [
-    Number(
+  List<ItemModel> numbers = const [
+    ItemModel(
         image: 'assets/images/numbers/one.png',
-        Japanese: 'ichi',
-        English: 'One',
+        JabTitle: 'ichi',
+        EngTitle: 'One',
         soundPath: 'sounds/numbers/one_sound.mp3'),
-    Number(
+    ItemModel(
         image: 'assets/images/numbers/two.png',
-        Japanese: 'Ni',
-        English: 'Two',
+        JabTitle: 'Ni',
+        EngTitle: 'Two',
         soundPath: 'sounds/numbers/two_sound.mp3'),
-    Number(
+    ItemModel(
         image: 'assets/images/numbers/three.png',
-        Japanese: 'San',
-        English: 'Three',
+        JabTitle: 'San',
+        EngTitle: 'Three',
         soundPath: 'sounds/numbers/three_sound.mp3'),
-    Number(
+    ItemModel(
         image: 'assets/images/numbers/four.png',
-        Japanese: 'Shi',
-        English: 'Four',
+        JabTitle: 'Shi',
+        EngTitle: 'Four',
         soundPath: 'sounds/numbers/four_sound.mp3'),
-    Number(
+    ItemModel(
         image: 'assets/images/numbers/five.png',
-        Japanese: 'Go',
-        English: 'Five',
+        JabTitle: 'Go',
+        EngTitle: 'Five',
         soundPath: 'sounds/numbers/five_sound.mp3'),
-    Number(
+    ItemModel(
         image: 'assets/images/numbers/six.png',
-        Japanese: 'Roku',
-        English: 'Six',
+        JabTitle: 'Roku',
+        EngTitle: 'Six',
         soundPath: 'sounds/numbers/six_sound.mp3'),
-    Number(
+    ItemModel(
         image: 'assets/images/numbers/seven.png',
-        Japanese: 'Sebun',
-        English: 'Seven',
+        JabTitle: 'Sebun',
+        EngTitle: 'Seven',
         soundPath: 'sounds/numbers/seven_sound.mp3'),
-    Number(
+    ItemModel(
         image: 'assets/images/numbers/eight.png',
-        Japanese: 'hachi',
-        English: 'Eight',
+        JabTitle: 'hachi',
+        EngTitle: 'Eight',
         soundPath: 'sounds/numbers/eight_sound.mp3'),
-    Number(
+    ItemModel(
         image: 'assets/images/numbers/nine.png',
-        Japanese: 'Kyū',
-        English: 'Nine',
+        JabTitle: 'Kyū',
+        EngTitle: 'Nine',
         soundPath: 'sounds/numbers/nine_sound.mp3'),
-    Number(
+    ItemModel(
       image: 'assets/images/numbers/ten.png',
-      Japanese: 'Jū',
-      English: 'Ten',
+      JabTitle: 'Jū',
+      EngTitle: 'Ten',
       soundPath: 'sounds/numbers/ten_sound.mp3',
     )
   ];
@@ -92,12 +92,12 @@ class NumbersPage extends StatelessWidget {
         //pointer and context to recognize the widget
         //iterator index to iterate on the passed list
         itemBuilder: (context, index) {
-          log('_______________________\nSlice number $index \n_______________________');
+          log('\nSlice number $index _______________________');
           // returns each widget item of the passed list
 
-          return CustomItemComponent.numbers(
-            number: numbers[index],
-            color: const Color(
+          return CustomItemComponent(
+            numbers[index],
+            const Color(
               0xFFF09135,
             ),
           );
@@ -109,15 +109,15 @@ class NumbersPage extends StatelessWidget {
 
 // 🤷‍♂️How Listview.builder works 🤔
 //the logic of how Listview.builder works
-List<Widget> callItemsBuilder(List<Number> numbers) {
+List<Widget> callItemsBuilder(List<ItemModel> numbers) {
   //empty list to fill the built widgets in the builder iterates on it to show
   //on the Numbers Screen
   List<Widget> filledList = [];
   for (int i = 0; i < numbers.length; i++) {
     filledList.add(
-      CustomItemComponent.numbers(
-        number: numbers[i],
-        color: const Color(0xFFF09135),
+      CustomItemComponent(
+        numbers[i],
+        const Color(0xFFF09135),
       ),
     );
   }
