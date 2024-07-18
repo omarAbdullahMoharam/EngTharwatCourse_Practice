@@ -1,10 +1,9 @@
 import 'package:audioplayers/audioplayers.dart';
 
 class AudioManager {
-  String soundPath;
-  AudioManager({required this.soundPath});
-  playSound() {
-    final player = AudioPlayer();
+  final player = AudioPlayer();
+
+  playSound(String soundPath) {
     player.play(AssetSource(soundPath));
   }
 }

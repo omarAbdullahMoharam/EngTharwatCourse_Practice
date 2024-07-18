@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:music_notes_player_app_setup/views/tune_view.dart';
+import 'package:music_notes_player_app_setup/view/tune_view.dart';
 
 void main() {
   runApp(const TuneApp());

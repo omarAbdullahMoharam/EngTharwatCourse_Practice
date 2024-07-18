@@ -1,0 +1,1 @@
+ C:\\Users\\omarm\\Desktop\\EngTharwatCourse_Practice\\tune_player_app_setup\\.dart_tool\\flutter_build\\807cb4ec44ca2524e1ef9f434980ad26\\native_assets.yaml: 
