@@ -28,6 +28,7 @@ class TuneView extends StatelessWidget {
         ),
         centerTitle: true,
         backgroundColor: const Color(0xff253238),
+        elevation: 0,
       ),
       body: Column(
         children: tuneList
