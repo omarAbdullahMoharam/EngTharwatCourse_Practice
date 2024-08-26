@@ -77,9 +77,11 @@ class HomePage extends StatelessWidget {
                 height: 30,
               ),
             ),
-            SliverToBoxAdapter(child: newsBuilder(newsList)),
+            // SliverToBoxAdapter(child: newsBuilder(newsList)),
+            newsBuilder(newsList),
           ],
         ),
+        //  bad practice as a scroll view  Never ScrollableScrollPhysics USE THIS 😡😡😡😡
         //  Column(
         //   children: [
         //     CategoriesListView(categories: categories),
