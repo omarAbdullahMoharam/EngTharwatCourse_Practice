@@ -4,6 +4,7 @@ import 'package:news_app/views/home_page.dart';
 void main() {
   runApp(const NewsApp());
 }
+// TODO: add splash screen Flutter native splash
 
 class NewsApp extends StatelessWidget {
   const NewsApp({super.key});
