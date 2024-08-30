@@ -7,9 +7,9 @@ import 'package:news_app/models/news_model.dart';
 class NewsItem extends StatelessWidget {
   const NewsItem({
     super.key,
-    required this.news,
+    required this.newsItem,
   });
-  final NewsModel news;
+  final NewsModel newsItem;
 
   @override
   Widget build(BuildContext context) {
@@ -18,12 +18,13 @@ class NewsItem extends StatelessWidget {
         ClipRRect(
           borderRadius: BorderRadius.circular(6),
           child: Image.network(
-            news.urlToImage,
+            newsItem.urlToImage ??
+                'https://th.bing.com/th/id/OIP.0PG09nGnJA0eANPas7qNhQHaJ4?rs=1&pid=ImgDetMain',
             fit: BoxFit.cover,
           ),
         ),
         Text(
-          news.title,
+          newsItem.title,
           style: GoogleFonts.kadwa(
             fontSize: 20,
             fontWeight: FontWeight.bold,
@@ -33,7 +34,7 @@ class NewsItem extends StatelessWidget {
           overflow: TextOverflow.ellipsis,
         ),
         Text(
-          news.description,
+          newsItem.description ?? '',
           style: GoogleFonts.roboto(
             color: Colors.grey.shade900,
             fontSize: 15,
