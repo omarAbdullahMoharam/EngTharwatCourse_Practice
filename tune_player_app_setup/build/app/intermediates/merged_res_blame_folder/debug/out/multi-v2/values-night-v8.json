@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.music_notes_player_app_setup.app-mergeDebugResources-11:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.example.music_notes_player_app_setup.app-mergeDebugResources-25:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
                     "source": "C:\\Users\\omarm\\Desktop\\EngTharwatCourse_Practice\\tune_player_app_setup\\android\\app\\src\\main\\res\\values-night\\styles.xml",

@@ -1,16 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <attr format="color" name="animationBackgroundColor"/>
+    <attr format="enum" name="finishPrimaryWithPlaceholder">
+        
+        <enum name="always" value="1"/>
+        
+        <enum name="adjacent" value="2"/>
+    </attr>
+    <attr format="enum" name="finishPrimaryWithSecondary">
+        
+        <enum name="never" value="0"/>
+        
+        <enum name="always" value="1"/>
+        
+        <enum name="adjacent" value="2"/>
+    </attr>
+    <attr format="enum" name="finishSecondaryWithPrimary">
+        
+        <enum name="never" value="0"/>
+        
+        <enum name="always" value="1"/>
+        
+        <enum name="adjacent" value="2"/>
+    </attr>
     <attr format="reference" name="nestedScrollViewStyle"/>
     <attr format="enum" name="splitLayoutDirection">
+        
         <enum name="locale" value="0"/>
+        
         <enum name="ltr" value="1"/>
+        
         <enum name="rtl" value="2"/>
+        
+        <enum name="topToBottom" value="3"/>
+        
+        <enum name="bottomToTop" value="4"/>
     </attr>
-    <attr format="dimension" name="splitMinSmallestWidth"/>
-    <attr format="dimension" name="splitMinWidth"/>
+    <attr format="float" name="splitMaxAspectRatioInLandscape">
+        
+        <enum name="alwaysAllow" value="0"/>
+        
+        <enum name="alwaysDisallow" value="-1"/>
+    </attr>
+    <attr format="float" name="splitMaxAspectRatioInPortrait">
+        
+        <enum name="alwaysAllow" value="0"/>
+        
+        <enum name="alwaysDisallow" value="-1"/>
+    </attr>
+    <attr format="integer" name="splitMinHeightDp"/>
+    <attr format="integer" name="splitMinSmallestWidthDp"/>
+    <attr format="integer" name="splitMinWidthDp"/>
     <attr format="float" name="splitRatio"/>
+    <attr format="string" name="tag"/>
     <color name="androidx_core_ripple_material_light">#1f000000</color>
     <color name="androidx_core_secondary_text_default_material_light">#8a000000</color>
+    <color name="call_notification_answer_color">#1d873b</color>
+    <color name="call_notification_decline_color">#d93025</color>
     <color name="notification_action_color_filter">#ffffffff</color>
     <color name="notification_icon_bg_color">#ff9e9e9e</color>
     <dimen name="compat_button_inset_horizontal_material">4dp</dimen>
@@ -29,7 +75,7 @@
     <dimen name="notification_main_column_padding_top">10dp</dimen>
     <dimen name="notification_media_narrow_margin">@dimen/notification_content_margin_start</dimen>
     <dimen name="notification_right_icon_size">16dp</dimen>
-    <dimen name="notification_right_side_padding_top">2dp</dimen>
+    <dimen name="notification_right_side_padding_top">4dp</dimen>
     <dimen name="notification_small_icon_background_padding">3dp</dimen>
     <dimen name="notification_small_icon_size_as_large">24dp</dimen>
     <dimen name="notification_subtext_size">13sp</dimen>
@@ -71,8 +117,11 @@
     <item name="accessibility_custom_action_8" type="id"/>
     <item name="accessibility_custom_action_9" type="id"/>
     <item name="androidx_window_activity_scope" type="id"/>
+    <item name="fragment_container_view_tag" type="id"/>
     <item name="line1" type="id"/>
     <item name="line3" type="id"/>
+    <item name="report_drawn" type="id"/>
+    <item name="special_effects_controller_view_tag" type="id"/>
     <item name="tag_accessibility_actions" type="id"/>
     <item name="tag_accessibility_clickable_spans" type="id"/>
     <item name="tag_accessibility_heading" type="id"/>
@@ -90,7 +139,19 @@
     <item name="text2" type="id"/>
     <item name="title" type="id"/>
     <id name="view_tree_lifecycle_owner"/>
+    <id name="view_tree_on_back_pressed_dispatcher_owner"/>
+    <id name="view_tree_saved_state_registry_owner"/>
+    <id name="view_tree_view_model_store_owner"/>
+    <item name="visible_removing_fragment_view_tag" type="id"/>
     <integer name="status_bar_notification_info_maxnum">999</integer>
+    <string name="androidx_startup" translatable="false">androidx.startup</string>
+    <string name="call_notification_answer_action">Answer</string>
+    <string name="call_notification_answer_video_action">Video</string>
+    <string name="call_notification_decline_action">Decline</string>
+    <string name="call_notification_hang_up_action">Hang Up</string>
+    <string name="call_notification_incoming_text">Incoming call</string>
+    <string name="call_notification_ongoing_text">Ongoing call</string>
+    <string name="call_notification_screening_text">Screening an incoming call</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <style name="LaunchTheme" parent="@android:style/Theme.Light.NoTitleBar">
         
@@ -121,6 +182,7 @@
     <declare-styleable name="ActivityRule">
         
         <attr format="boolean" name="alwaysExpand"/>
+        <attr name="tag"/>
     </declare-styleable>
     <declare-styleable name="Capability">
         
@@ -192,6 +254,15 @@
         <attr name="android:fontVariationSettings"/>
         <attr name="android:ttcIndex"/>
     </declare-styleable>
+    <declare-styleable name="Fragment">
+        <attr name="android:name"/>
+        <attr name="android:id"/>
+        <attr name="android:tag"/>
+    </declare-styleable>
+    <declare-styleable name="FragmentContainerView">
+        <attr name="android:name"/>
+        <attr name="android:tag"/>
+    </declare-styleable>
     <declare-styleable name="GradientColor">
         
         <attr name="android:startColor"/>
@@ -241,22 +312,33 @@
     </declare-styleable>
     <declare-styleable name="SplitPairRule">
         
-        <attr format="boolean" name="finishPrimaryWithSecondary"/>
-        
-        <attr format="boolean" name="finishSecondaryWithPrimary"/>
-        
         <attr format="boolean" name="clearTop"/>
+        <attr name="finishPrimaryWithSecondary"/>
+        <attr name="finishSecondaryWithPrimary"/>
         <attr name="splitRatio"/>
-        <attr name="splitMinWidth"/>
-        <attr name="splitMinSmallestWidth"/>
+        <attr name="splitMinWidthDp"/>
+        <attr name="splitMinHeightDp"/>
+        <attr name="splitMinSmallestWidthDp"/>
+        <attr name="splitMaxAspectRatioInPortrait"/>
+        <attr name="splitMaxAspectRatioInLandscape"/>
         <attr name="splitLayoutDirection"/>
+        <attr name="tag"/>
+        <attr name="animationBackgroundColor"/>
     </declare-styleable>
     <declare-styleable name="SplitPlaceholderRule">
         
         <attr format="string" name="placeholderActivityName"/>
+        
+        <attr format="boolean" name="stickyPlaceholder"/>
+        <attr name="finishPrimaryWithPlaceholder"/>
         <attr name="splitRatio"/>
-        <attr name="splitMinWidth"/>
-        <attr name="splitMinSmallestWidth"/>
+        <attr name="splitMinWidthDp"/>
+        <attr name="splitMinHeightDp"/>
+        <attr name="splitMinSmallestWidthDp"/>
+        <attr name="splitMaxAspectRatioInPortrait"/>
+        <attr name="splitMaxAspectRatioInLandscape"/>
         <attr name="splitLayoutDirection"/>
+        <attr name="tag"/>
+        <attr name="animationBackgroundColor"/>
     </declare-styleable>
 </resources>

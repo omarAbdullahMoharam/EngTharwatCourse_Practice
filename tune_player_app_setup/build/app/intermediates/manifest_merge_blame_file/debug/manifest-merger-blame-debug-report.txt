@@ -17,20 +17,20 @@
 15-->C:\Users\omarm\Desktop\EngTharwatCourse_Practice\tune_player_app_setup\android\app\src\debug\AndroidManifest.xml:6:22-64
 16
 17    <permission
-17-->[androidx.core:core:1.9.0] C:\Users\omarm\.gradle\caches\transforms-3\c2aff38445ebad8ddeaa989ecf50f56e\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+17-->[androidx.core:core:1.13.1] C:\Users\omarm\.gradle\caches\transforms-3\2f6bc1e98ea672b50ba00d436d171090\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
 18        android:name="com.example.music_notes_player_app_setup.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-18-->[androidx.core:core:1.9.0] C:\Users\omarm\.gradle\caches\transforms-3\c2aff38445ebad8ddeaa989ecf50f56e\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+18-->[androidx.core:core:1.13.1] C:\Users\omarm\.gradle\caches\transforms-3\2f6bc1e98ea672b50ba00d436d171090\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
 19        android:protectionLevel="signature" />
-19-->[androidx.core:core:1.9.0] C:\Users\omarm\.gradle\caches\transforms-3\c2aff38445ebad8ddeaa989ecf50f56e\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+19-->[androidx.core:core:1.13.1] C:\Users\omarm\.gradle\caches\transforms-3\2f6bc1e98ea672b50ba00d436d171090\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
 20
 21    <uses-permission android:name="com.example.music_notes_player_app_setup.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-21-->[androidx.core:core:1.9.0] C:\Users\omarm\.gradle\caches\transforms-3\c2aff38445ebad8ddeaa989ecf50f56e\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
-21-->[androidx.core:core:1.9.0] C:\Users\omarm\.gradle\caches\transforms-3\c2aff38445ebad8ddeaa989ecf50f56e\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+21-->[androidx.core:core:1.13.1] C:\Users\omarm\.gradle\caches\transforms-3\2f6bc1e98ea672b50ba00d436d171090\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
+21-->[androidx.core:core:1.13.1] C:\Users\omarm\.gradle\caches\transforms-3\2f6bc1e98ea672b50ba00d436d171090\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
 22
 23    <application
 24        android:name="android.app.Application"
 25        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-25-->[androidx.core:core:1.9.0] C:\Users\omarm\.gradle\caches\transforms-3\c2aff38445ebad8ddeaa989ecf50f56e\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+25-->[androidx.core:core:1.13.1] C:\Users\omarm\.gradle\caches\transforms-3\2f6bc1e98ea672b50ba00d436d171090\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
 26        android:debuggable="true"
 27        android:icon="@mipmap/ic_launcher"
 28        android:label="music_notes_player_app_setup" >
@@ -68,17 +68,77 @@
 60            android:value="2" />
 61
 62        <uses-library
-62-->[androidx.window:window:1.0.0-beta04] C:\Users\omarm\.gradle\caches\transforms-3\25cee5f028ac2a6b79fd6278ff5b59e2\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
+62-->[androidx.window:window:1.2.0] C:\Users\omarm\.gradle\caches\transforms-3\eca96a3fbf45ee829c50bc4036651c65\transformed\jetified-window-1.2.0\AndroidManifest.xml:23:9-25:40
 63            android:name="androidx.window.extensions"
-63-->[androidx.window:window:1.0.0-beta04] C:\Users\omarm\.gradle\caches\transforms-3\25cee5f028ac2a6b79fd6278ff5b59e2\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
+63-->[androidx.window:window:1.2.0] C:\Users\omarm\.gradle\caches\transforms-3\eca96a3fbf45ee829c50bc4036651c65\transformed\jetified-window-1.2.0\AndroidManifest.xml:24:13-54
 64            android:required="false" />
-64-->[androidx.window:window:1.0.0-beta04] C:\Users\omarm\.gradle\caches\transforms-3\25cee5f028ac2a6b79fd6278ff5b59e2\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
+64-->[androidx.window:window:1.2.0] C:\Users\omarm\.gradle\caches\transforms-3\eca96a3fbf45ee829c50bc4036651c65\transformed\jetified-window-1.2.0\AndroidManifest.xml:25:13-37
 65        <uses-library
-65-->[androidx.window:window:1.0.0-beta04] C:\Users\omarm\.gradle\caches\transforms-3\25cee5f028ac2a6b79fd6278ff5b59e2\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
+65-->[androidx.window:window:1.2.0] C:\Users\omarm\.gradle\caches\transforms-3\eca96a3fbf45ee829c50bc4036651c65\transformed\jetified-window-1.2.0\AndroidManifest.xml:26:9-28:40
 66            android:name="androidx.window.sidecar"
-66-->[androidx.window:window:1.0.0-beta04] C:\Users\omarm\.gradle\caches\transforms-3\25cee5f028ac2a6b79fd6278ff5b59e2\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
+66-->[androidx.window:window:1.2.0] C:\Users\omarm\.gradle\caches\transforms-3\eca96a3fbf45ee829c50bc4036651c65\transformed\jetified-window-1.2.0\AndroidManifest.xml:27:13-51
 67            android:required="false" />
-67-->[androidx.window:window:1.0.0-beta04] C:\Users\omarm\.gradle\caches\transforms-3\25cee5f028ac2a6b79fd6278ff5b59e2\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
-68    </application>
-69
-70</manifest>
+67-->[androidx.window:window:1.2.0] C:\Users\omarm\.gradle\caches\transforms-3\eca96a3fbf45ee829c50bc4036651c65\transformed\jetified-window-1.2.0\AndroidManifest.xml:28:13-37
+68
+69        <provider
+69-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\omarm\.gradle\caches\transforms-3\6618b146e7ec5ffdf293e19923215054\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:24:9-32:20
+70            android:name="androidx.startup.InitializationProvider"
+70-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\omarm\.gradle\caches\transforms-3\6618b146e7ec5ffdf293e19923215054\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:25:13-67
+71            android:authorities="com.example.music_notes_player_app_setup.androidx-startup"
+71-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\omarm\.gradle\caches\transforms-3\6618b146e7ec5ffdf293e19923215054\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:26:13-68
+72            android:exported="false" >
+72-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\omarm\.gradle\caches\transforms-3\6618b146e7ec5ffdf293e19923215054\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:27:13-37
+73            <meta-data
+73-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\omarm\.gradle\caches\transforms-3\6618b146e7ec5ffdf293e19923215054\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:29:13-31:52
+74                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+74-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\omarm\.gradle\caches\transforms-3\6618b146e7ec5ffdf293e19923215054\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:30:17-78
+75                android:value="androidx.startup" />
+75-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\omarm\.gradle\caches\transforms-3\6618b146e7ec5ffdf293e19923215054\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:31:17-49
+76            <meta-data
+76-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\omarm\.gradle\caches\transforms-3\14d836f9dcb26fa6f55a1bd0397d99b8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+77                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+77-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\omarm\.gradle\caches\transforms-3\14d836f9dcb26fa6f55a1bd0397d99b8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+78                android:value="androidx.startup" />
+78-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\omarm\.gradle\caches\transforms-3\14d836f9dcb26fa6f55a1bd0397d99b8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+79        </provider>
+80
+81        <receiver
+81-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\omarm\.gradle\caches\transforms-3\14d836f9dcb26fa6f55a1bd0397d99b8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+82            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+82-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\omarm\.gradle\caches\transforms-3\14d836f9dcb26fa6f55a1bd0397d99b8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+83            android:directBootAware="false"
+83-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\omarm\.gradle\caches\transforms-3\14d836f9dcb26fa6f55a1bd0397d99b8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+84            android:enabled="true"
+84-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\omarm\.gradle\caches\transforms-3\14d836f9dcb26fa6f55a1bd0397d99b8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+85            android:exported="true"
+85-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\omarm\.gradle\caches\transforms-3\14d836f9dcb26fa6f55a1bd0397d99b8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+86            android:permission="android.permission.DUMP" >
+86-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\omarm\.gradle\caches\transforms-3\14d836f9dcb26fa6f55a1bd0397d99b8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+87            <intent-filter>
+87-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\omarm\.gradle\caches\transforms-3\14d836f9dcb26fa6f55a1bd0397d99b8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+88                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+88-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\omarm\.gradle\caches\transforms-3\14d836f9dcb26fa6f55a1bd0397d99b8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+88-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\omarm\.gradle\caches\transforms-3\14d836f9dcb26fa6f55a1bd0397d99b8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+89            </intent-filter>
+90            <intent-filter>
+90-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\omarm\.gradle\caches\transforms-3\14d836f9dcb26fa6f55a1bd0397d99b8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+91                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+91-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\omarm\.gradle\caches\transforms-3\14d836f9dcb26fa6f55a1bd0397d99b8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+91-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\omarm\.gradle\caches\transforms-3\14d836f9dcb26fa6f55a1bd0397d99b8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+92            </intent-filter>
+93            <intent-filter>
+93-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\omarm\.gradle\caches\transforms-3\14d836f9dcb26fa6f55a1bd0397d99b8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+94                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+94-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\omarm\.gradle\caches\transforms-3\14d836f9dcb26fa6f55a1bd0397d99b8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+94-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\omarm\.gradle\caches\transforms-3\14d836f9dcb26fa6f55a1bd0397d99b8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+95            </intent-filter>
+96            <intent-filter>
+96-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\omarm\.gradle\caches\transforms-3\14d836f9dcb26fa6f55a1bd0397d99b8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+97                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+97-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\omarm\.gradle\caches\transforms-3\14d836f9dcb26fa6f55a1bd0397d99b8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+97-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\omarm\.gradle\caches\transforms-3\14d836f9dcb26fa6f55a1bd0397d99b8\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+98            </intent-filter>
+99        </receiver>
+100    </application>
+101
+102</manifest>

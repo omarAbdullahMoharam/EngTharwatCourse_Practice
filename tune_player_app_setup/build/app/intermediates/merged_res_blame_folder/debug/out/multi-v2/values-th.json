@@ -1,16 +1,16 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.music_notes_player_app_setup.app-mergeDebugResources-11:/values-th/values-th.xml",
+            "outputFile": "com.example.music_notes_player_app_setup.app-mergeDebugResources-25:/values-th/values-th.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\omarm\\.gradle\\caches\\transforms-3\\c2aff38445ebad8ddeaa989ecf50f56e\\transformed\\core-1.9.0\\res\\values-th\\values-th.xml",
+                    "source": "C:\\Users\\omarm\\.gradle\\caches\\transforms-3\\2f6bc1e98ea672b50ba00d436d171090\\transformed\\core-1.13.1\\res\\values-th\\values-th.xml",
                     "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,151,254,352,450,553,658,770",
+                        "endColumns": "95,102,97,97,102,104,111,100",
+                        "endOffsets": "146,249,347,445,548,653,765,866"
                     }
                 }
             ]
