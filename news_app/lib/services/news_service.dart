@@ -10,7 +10,7 @@ class NewsService {
   // create gitNews response 🔻
   Future<List<NewsModel>> getNews() async {
     var response = await dio.get(
-        'https://newsapi.org/v2/top-headlines?q=covid&q=health&q=coronavirus&apiKey=6c4b419554ee41059dfd9bf0381ee1c8');
+        'https://newsapi.org/v2/everything?q=bitcoin&apiKey=bfac70098f3e46ec86b785ec82e7dbdf');
     Map<String, dynamic> jsonData = response.data;
 
     List<dynamic> articles = jsonData['articles'];

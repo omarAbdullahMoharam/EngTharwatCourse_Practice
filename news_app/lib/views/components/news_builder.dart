@@ -10,17 +10,6 @@ class NewsBuilder extends StatefulWidget {
 }
 
 class _NewsBuilderState extends State<NewsBuilder> {
-  // List<NewsModel> news = [];
-  // @override
-  // void initState() {
-  //   fetchNews();
-  //   super.initState();
-  // }
-
-  // Future<void> fetchNews() async {
-  //   news = await NewsService(Dio()).getNews();
-  // }
-
   // List<NewsModel> newsList = [];
   @override
   Widget build(BuildContext context) {

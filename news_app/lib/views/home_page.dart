@@ -27,6 +27,8 @@ class _HomePageState extends State<HomePage> {
   ];
 
   List<NewsModel> newsList = [];
+  bool isLoading = true;
+
   @override
   void initState() {
     fetchLatestNews();
@@ -35,6 +37,8 @@ class _HomePageState extends State<HomePage> {
 
   Future<void> fetchLatestNews() async {
     newsList = await NewsService(Dio()).getNews();
+    isLoading = false;
+    setState(() {});
   }
 
   @override
@@ -60,43 +64,36 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.orange,
                 fontWeight: FontWeight.bold,
               ),
-            )
+            ),
           ],
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 16.0,
-        ),
-        child: CustomScrollView(
-          physics: const BouncingScrollPhysics(),
-          slivers: [
-            SliverToBoxAdapter(
-              child: CategoriesListView(categories: categories),
-            ),
-            const SliverToBoxAdapter(
-              child: SizedBox(
-                height: 30,
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        child: isLoading
+            ? const Center(
+                child: CircularProgressIndicator(
+                  color: Colors.white,
+                  strokeWidth: 4,
+                  backgroundColor: Colors.orange,
+                ),
+              )
+            : CustomScrollView(
+                physics: const BouncingScrollPhysics(),
+                slivers: [
+                  SliverToBoxAdapter(
+                    child: CategoriesListView(categories: categories),
+                  ),
+                  const SliverToBoxAdapter(
+                    child: SizedBox(
+                      height: 30,
+                    ),
+                  ),
+                  NewsBuilder(
+                    news: newsList,
+                  ),
+                ],
               ),
-            ),
-            // SliverToBoxAdapter(child: newsBuilder(newsList)),
-            NewsBuilder(
-              news: newsList,
-            ),
-          ],
-        ),
-        //  bad practice as a scroll view  Never ScrollableScrollPhysics USE THIS 😡😡😡😡
-        //  Column(
-        //   children: [
-        //     CategoriesListView(categories: categories),
-        //     const SizedBox(
-        //       height: 30,
-        //     ),
-        //     Expanded(
-        //       child: newsBuilder(newsList),
-        //     ),
-        //   ],
-        // ),
       ),
     );
   }
