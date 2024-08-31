@@ -10,7 +10,6 @@ class NewsBuilder extends StatefulWidget {
 }
 
 class _NewsBuilderState extends State<NewsBuilder> {
-  // List<NewsModel> newsList = [];
   @override
   Widget build(BuildContext context) {
     //  best solution as performance and more efficient and best case for use in sliver🤍👌
