@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:news_app/models/news_model.dart';
 import 'package:news_app/services/news_service.dart';
 import 'package:news_app/views/components/news_generator.dart';
+import 'package:news_app/views/home_page.dart';
+
+import 'LoadingIndicator.dart';
 
 class NewsListViewBuilder extends StatefulWidget {
   const NewsListViewBuilder({
@@ -36,10 +39,9 @@ class _NewsListViewBuilderState extends State<NewsListViewBuilder> {
   Widget build(BuildContext context) {
     return isLoading
         ? const SliverToBoxAdapter(
-            child: Center(
-              child: CircularProgressIndicator(),
-            ),
-          )
+            child: LoadingIndicator(
+            position: 0.49,
+          ))
         : NewsBuilder(
             news: widget.newsList,
           );

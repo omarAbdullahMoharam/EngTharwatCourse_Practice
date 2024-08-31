@@ -9,24 +9,29 @@ class NewsService {
 
   // create gitNews response 🔻
   Future<List<NewsModel>> getNews() async {
-    var response = await dio.get(
-        'https://newsapi.org/v2/everything?q=bitcoin&apiKey=bfac70098f3e46ec86b785ec82e7dbdf');
-    Map<String, dynamic> jsonData = response.data;
+    try {
+      var response = await dio.get(
+          'https://newsapi.org/v2/everything?q=bitcoin&apiKey=bfac70098f3e46ec86b785ec82e7dbdf');
+      Map<String, dynamic> jsonData = response.data;
 
-    List<dynamic> articles = jsonData['articles'];
+      List<dynamic> articles = jsonData['articles'];
 
-    log(jsonData['status']);
-    List<NewsModel> newsList = [];
-    for (var article in articles) {
-      NewsModel news = NewsModel(
-        title: article['title'],
-        description: article['description'],
-        urlToImage: article['urlToImage'],
-      );
-      log(article['urlToImage'] ?? 'no image');
+      log(jsonData['status']);
+      List<NewsModel> newsList = [];
+      for (var article in articles) {
+        NewsModel news = NewsModel(
+          title: article['title'],
+          description: article['description'],
+          urlToImage: article['urlToImage'],
+        );
+        log(article['urlToImage'] ?? 'no image');
 
-      newsList.add(news);
+        newsList.add(news);
+      }
+      return newsList;
+    } catch (e) {
+      log(e.toString());
+      return [];
     }
-    return newsList;
   }
 }

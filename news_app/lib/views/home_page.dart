@@ -7,6 +7,8 @@ import 'package:news_app/services/news_service.dart';
 import 'package:news_app/views/components/CategoriesListView.dart';
 import 'package:news_app/views/components/news_listView_builder.dart';
 
+import 'components/LoadingIndicator.dart';
+
 // ignore: must_be_immutable
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -71,12 +73,8 @@ class _HomePageState extends State<HomePage> {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: isLoading
-            ? const Center(
-                child: CircularProgressIndicator(
-                  color: Colors.white,
-                  strokeWidth: 4,
-                  backgroundColor: Colors.orange,
-                ),
+            ? const LoadingIndicator(
+                position: 0.8,
               )
             : CustomScrollView(
                 physics: const BouncingScrollPhysics(),
@@ -89,7 +87,42 @@ class _HomePageState extends State<HomePage> {
                       height: 30,
                     ),
                   ),
-                  NewsListViewBuilder(newsList: newsList),
+                  newsList.isEmpty
+                      ? SliverToBoxAdapter(
+                          child: SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.8,
+                            width: MediaQuery.of(context).size.width * 0.8,
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                const Spacer(),
+                                const Icon(
+                                  Icons.newspaper,
+                                  size: 100,
+                                  color: Colors.orange,
+                                ),
+                                const SizedBox(
+                                  height: 20,
+                                ),
+                                Center(
+                                  child: Text(
+                                    'No News Found',
+                                    style: GoogleFonts.kronaOne(
+                                      fontSize: 20,
+                                      color: Colors.orangeAccent.shade700,
+                                    ),
+                                  ),
+                                ),
+                                const Spacer(
+                                  flex: 3,
+                                ),
+                              ],
+                            ),
+                          ),
+                        )
+                      : NewsListViewBuilder(newsList: newsList),
                 ],
               ),
       ),
