@@ -5,7 +5,7 @@ import 'package:news_app/models/category_model.dart';
 import 'package:news_app/models/news_model.dart';
 import 'package:news_app/services/news_service.dart';
 import 'package:news_app/views/components/CategoriesListView.dart';
-import 'package:news_app/views/components/news_builder.dart';
+import 'package:news_app/views/components/news_listView_builder.dart';
 
 // ignore: must_be_immutable
 class HomePage extends StatefulWidget {
@@ -89,9 +89,7 @@ class _HomePageState extends State<HomePage> {
                       height: 30,
                     ),
                   ),
-                  NewsBuilder(
-                    news: newsList,
-                  ),
+                  NewsListViewBuilder(newsList: newsList),
                 ],
               ),
       ),
