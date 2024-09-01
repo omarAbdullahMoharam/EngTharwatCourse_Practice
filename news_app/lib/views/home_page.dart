@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> {
     CategoryModel(
       image: 'assets/general.avif',
       catName: 'General',
-      type: 'top',
+      type: 'travel',
     ),
   ];
 
@@ -65,7 +65,7 @@ class _HomePageState extends State<HomePage> {
   Future<void> fetchLatestNews() async {
     final newsList = await NewsService(
       Dio(),
-    ).getLatest(category: 'top');
+    ).getLatest(category: 'technology');
     setState(() {
       this.newsList = newsList;
       isLoading = false;
@@ -136,7 +136,7 @@ class _HomePageState extends State<HomePage> {
                           child: EmptyNews(),
                         )
                       : const NewsListViewBuilder(
-                          category: 'tourism',
+                          category: 'environment',
                         ),
                 ],
               ),
