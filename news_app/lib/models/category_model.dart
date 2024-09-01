@@ -1,6 +1,11 @@
 // ignore: file_names
-class CategoryCard {
+class CategoryModel {
   final String catName;
   final String image;
-  const CategoryCard({required this.catName, required this.image});
+  final String type;
+  const CategoryModel({
+    required this.catName,
+    required this.image,
+    required this.type,
+  });
 }

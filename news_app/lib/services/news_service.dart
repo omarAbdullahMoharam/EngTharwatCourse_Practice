@@ -1,37 +1,33 @@
-import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:news_app/models/news_model.dart';
 
 class NewsService {
-  Dio dio = Dio();
+  final Dio _dio;
+  NewsService(
+    this._dio,
+  );
 
-  NewsService(this.dio);
-
-  // create gitNews response 🔻
-  Future<List<NewsModel>> getNews() async {
+  Future<List<NewsModel>> getLatest({required String category}) async {
     try {
-      var response = await dio.get(
-          'https://newsapi.org/v2/everything?q=bitcoin&apiKey=bfac70098f3e46ec86b785ec82e7dbdf');
-      Map<String, dynamic> jsonData = response.data;
-
-      List<dynamic> articles = jsonData['articles'];
-
-      log(jsonData['status']);
+      final response = await _dio.get(
+        'https://newsdata.io/api/1/latest?apikey=pub_52369562ac0f19f7a74577ec9d38a1ddafe83&category=$category&country=us',
+      );
+      final List<dynamic> data = response.data['results'];
       List<NewsModel> newsList = [];
-      for (var article in articles) {
-        NewsModel news = NewsModel(
-          title: article['title'],
-          description: article['description'],
-          urlToImage: article['urlToImage'],
+      for (var news in data) {
+        newsList.add(
+          NewsModel(
+            title: news['title'],
+            description: news['description'] ?? '',
+            urlToImage: news['image_url'],
+          ),
         );
-        log(article['urlToImage'] ?? 'no image');
-
-        newsList.add(news);
       }
+
       return newsList;
     } catch (e) {
-      log(e.toString());
-      return [];
+      // Handle error
+      throw Exception('Failed to load news');
     }
   }
 }

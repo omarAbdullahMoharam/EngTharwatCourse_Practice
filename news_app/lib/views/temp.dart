@@ -16,14 +16,14 @@
 // }
 
 // class _HomePageState extends State<HomePage> {
-//   List<CategoryCard> categories = const [
-//     CategoryCard(image: 'assets/technology.jpeg', catName: 'Technology'),
-//     CategoryCard(image: 'assets/Entertainment.jpg', catName: 'Entertainment'),
-//     CategoryCard(image: 'assets/sports.avif', catName: 'Sports'),
-//     CategoryCard(image: 'assets/health.avif', catName: 'Health'),
-//     CategoryCard(image: 'assets/science.avif', catName: 'Science'),
-//     CategoryCard(image: 'assets/business.avif', catName: 'Business'),
-//     CategoryCard(image: 'assets/general.avif', catName: 'General'),
+//   List<CategoryModel> categories = const [
+//     CategoryModel(image: 'assets/technology.jpeg', catName: 'Technology'),
+//     CategoryModel(image: 'assets/Entertainment.jpg', catName: 'Entertainment'),
+//     CategoryModel(image: 'assets/sports.avif', catName: 'Sports'),
+//     CategoryModel(image: 'assets/health.avif', catName: 'Health'),
+//     CategoryModel(image: 'assets/science.avif', catName: 'Science'),
+//     CategoryModel(image: 'assets/business.avif', catName: 'Business'),
+//     CategoryModel(image: 'assets/general.avif', catName: 'General'),
 //   ];
 
 //   List<NewsModel> newsList = [];
@@ -36,7 +36,7 @@
 //   }
 
 //   Future<void> fetchLatestNews() async {
-//     newsList = await NewsService(Dio()).getNews();
+//     newsList = await NewsService(Dio()).getLatest();
 //     isLoading = false;
 //     setState(() {});
 //   }

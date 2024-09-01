@@ -8,6 +8,7 @@ import 'package:news_app/views/components/CategoriesListView.dart';
 import 'package:news_app/views/components/news_listView_builder.dart';
 
 import 'components/LoadingIndicator.dart';
+import 'components/empty_news.dart';
 
 // ignore: must_be_immutable
 class HomePage extends StatefulWidget {
@@ -18,14 +19,38 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<CategoryCard> categories = const [
-    CategoryCard(image: 'assets/technology.jpeg', catName: 'Technology'),
-    CategoryCard(image: 'assets/Entertainment.jpg', catName: 'Entertainment'),
-    CategoryCard(image: 'assets/sports.avif', catName: 'Sports'),
-    CategoryCard(image: 'assets/health.avif', catName: 'Health'),
-    CategoryCard(image: 'assets/science.avif', catName: 'Science'),
-    CategoryCard(image: 'assets/business.avif', catName: 'Business'),
-    CategoryCard(image: 'assets/general.avif', catName: 'General'),
+  List<CategoryModel> categories = const [
+    CategoryModel(
+        image: 'assets/technology.jpeg',
+        catName: 'Technology',
+        type: 'technology'),
+    CategoryModel(
+      image: 'assets/Entertainment.jpg',
+      catName: 'Entertainment',
+      type: 'entertainment',
+    ),
+    CategoryModel(
+      image: 'assets/sports.avif',
+      catName: 'Sports',
+      type: 'sports',
+    ),
+    CategoryModel(
+      image: 'assets/health.avif',
+      catName: 'Health',
+      type: 'health',
+    ),
+    CategoryModel(
+      image: 'assets/science.avif',
+      catName: 'Science',
+      type: 'science',
+    ),
+    CategoryModel(
+        image: 'assets/business.avif', catName: 'Business', type: 'business'),
+    CategoryModel(
+      image: 'assets/general.avif',
+      catName: 'General',
+      type: 'top',
+    ),
   ];
 
   List<NewsModel> newsList = [];
@@ -38,10 +63,29 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<void> fetchLatestNews() async {
-    newsList = await NewsService(Dio()).getNews();
-    isLoading = false;
-    setState(() {});
+    final newsList = await NewsService(
+      Dio(),
+    ).getLatest(category: 'top');
+    setState(() {
+      this.newsList = newsList;
+      isLoading = false;
+    });
   }
+
+  // Future<void> fetchLatestNews() async {
+  //   try {
+  //     final newsList = await NewsService(Dio()).getLatest();
+  //     setState(() {
+  //       this.newsList = newsList;
+  //       isLoading = false;
+  //     });
+  //   } catch (e) {
+  //     // Handle error
+  //     setState(() {
+  //       isLoading = false;
+  //     });
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -88,41 +132,12 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   newsList.isEmpty
-                      ? SliverToBoxAdapter(
-                          child: SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.8,
-                            width: MediaQuery.of(context).size.width * 0.8,
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                const Spacer(),
-                                const Icon(
-                                  Icons.newspaper,
-                                  size: 100,
-                                  color: Colors.orange,
-                                ),
-                                const SizedBox(
-                                  height: 20,
-                                ),
-                                Center(
-                                  child: Text(
-                                    'No News Found',
-                                    style: GoogleFonts.kronaOne(
-                                      fontSize: 20,
-                                      color: Colors.orangeAccent.shade700,
-                                    ),
-                                  ),
-                                ),
-                                const Spacer(
-                                  flex: 3,
-                                ),
-                              ],
-                            ),
-                          ),
+                      ? const SliverToBoxAdapter(
+                          child: EmptyNews(),
                         )
-                      : NewsListViewBuilder(newsList: newsList),
+                      : const NewsListViewBuilder(
+                          category: 'tourism',
+                        ),
                 ],
               ),
       ),

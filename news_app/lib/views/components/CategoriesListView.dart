@@ -8,7 +8,7 @@ class CategoriesListView extends StatelessWidget {
     required this.categories,
   });
 
-  final List<CategoryCard> categories;
+  final List<CategoryModel> categories;
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +22,7 @@ class CategoriesListView extends StatelessWidget {
         itemBuilder: (context, index) => CategoryCardItem(
           image: categories[index].image,
           title: categories[index].catName,
+          categoryModel: categories[index],
         ),
       ),
     );

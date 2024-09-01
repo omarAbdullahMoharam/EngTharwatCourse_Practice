@@ -1,5 +1,5 @@
 class NewsModel {
-  String title;
+  String? title;
   String? description;
   String? urlToImage;
 
