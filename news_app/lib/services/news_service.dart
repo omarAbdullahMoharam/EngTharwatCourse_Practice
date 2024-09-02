@@ -28,10 +28,12 @@ class NewsService {
             description: news['summary'] ?? '',
             // urlToImage: news['image_url'],
             urlToImage: news['image'],
+            url: news['url'],
           ),
         );
       }
       log(newsList.toString());
+      // log(newsList.url)
       return newsList;
     } catch (e) {
       // Handle error

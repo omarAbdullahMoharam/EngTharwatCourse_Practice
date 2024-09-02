@@ -21,9 +21,15 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   List<CategoryModel> categories = const [
     CategoryModel(
-        image: 'assets/technology.jpeg',
-        catName: 'Technology',
-        type: 'technology'),
+      image: 'assets/technology.jpeg',
+      catName: 'Technology',
+      type: 'technology',
+    ),
+    CategoryModel(
+      image: 'assets/business.avif',
+      catName: 'Business',
+      type: 'business',
+    ),
     CategoryModel(
       image: 'assets/Entertainment.jpg',
       catName: 'Entertainment',
@@ -44,8 +50,6 @@ class _HomePageState extends State<HomePage> {
       catName: 'Science',
       type: 'science',
     ),
-    CategoryModel(
-        image: 'assets/business.avif', catName: 'Business', type: 'business'),
     CategoryModel(
       image: 'assets/general.avif',
       catName: 'General',
@@ -114,34 +118,34 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
-        child: isLoading
-            ? const LoadingIndicator(
-                position: 0.8,
-              )
-            : CustomScrollView(
-                physics: const BouncingScrollPhysics(),
-                slivers: [
-                  SliverToBoxAdapter(
+      body: isLoading
+          ? const LoadingIndicator(
+              position: 0.8,
+            )
+          : CustomScrollView(
+              physics: const BouncingScrollPhysics(),
+              slivers: [
+                SliverToBoxAdapter(
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 6.0),
                     child: CategoriesListView(categories: categories),
                   ),
-                  const SliverToBoxAdapter(
-                    child: SizedBox(
-                      height: 30,
-                    ),
+                ),
+                const SliverToBoxAdapter(
+                  child: SizedBox(
+                    height: 30,
                   ),
-                  newsList.isEmpty
-                      ? const SliverToBoxAdapter(
-                          child: EmptyNews(),
-                        )
-                      : const NewsListViewBuilder(
-                          //   category: 'top'
-                          category: 'environment',
-                        ),
-                ],
-              ),
-      ),
+                ),
+                newsList.isEmpty
+                    ? const SliverToBoxAdapter(
+                        child: EmptyNews(),
+                      )
+                    : const NewsListViewBuilder(
+                        //   category: 'top'
+                        category: 'environment',
+                      ),
+              ],
+            ),
     );
   }
 }
