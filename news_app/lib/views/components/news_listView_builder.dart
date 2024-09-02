@@ -39,9 +39,10 @@ class _NewsListViewBuilderState extends State<NewsListViewBuilder> {
   // }
 
   //  Test the error Screen 🔻🔻🔻
-  // Future<String> _failingFuture() async {
-  //   throw Exception("This is a forced error!");
-  // }
+  Future<List<NewsModel>> simulateError() async {
+    await Future.delayed(const Duration(seconds: 2)); // Simulate a delay
+    throw Exception("Simulated network error");
+  }
 
   @override
   Widget build(BuildContext context) {

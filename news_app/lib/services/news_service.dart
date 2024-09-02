@@ -12,7 +12,7 @@ class NewsService {
   Future<List<NewsModel>> getLatest({required String category}) async {
     try {
       final response = await _dio.get(
-          'https://api.worldnewsapi.com/search-news?source-countries=us&categories=$category&api-key=5d37f64c2bd24ce6aa759d435b93bcce'
+          'https://api.worldnewsapi.com/search-news?source-countries=us&categories=$category&api-key=a654e5c46ea04af187a35d6de7b83535'
           // 🔻🔻Old API Link 🚨🚨🚨🚨🚨
           // 'https://newsdata.io/api/1/latest?apikey=pub_52369562ac0f19f7a74577ec9d38a1ddafe83&category=$category&country=us',
           );
