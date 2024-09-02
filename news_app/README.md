@@ -1,6 +1,3 @@
-# Writing the improved README content with image placement and formatting to a file.
-
-readme_content = """
 # **NewsApp**
 
 A sleek and efficient Flutter project that delivers the latest news from around the globe.
