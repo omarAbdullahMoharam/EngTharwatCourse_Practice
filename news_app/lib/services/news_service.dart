@@ -20,17 +20,8 @@ class NewsService {
       List<NewsModel> newsList = [];
 
       for (var news in data) {
-        newsList.add(
-          NewsModel(
-            title: news['title'],
-            //  configuration for the old API Link🎯👌👌
-            // description: news['description'],
-            description: news['summary'] ?? '',
-            // urlToImage: news['image_url'],
-            urlToImage: news['image'],
-            url: news['url'],
-          ),
-        );
+        // NewsModel newsModel = NewsModel.fromJson(news);
+        newsList.add(NewsModel.fromJson(news));
       }
       log(newsList.toString());
       // log(newsList.url)
