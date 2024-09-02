@@ -9,13 +9,13 @@ This app is powered by the **World News API**, providing users with the latest n
 ### Home and No News Screens
 <p align="center">
   <img src="Screenshot_1725317147.png" alt="Home Screen" width="300">
-  <img src="Screenshot_1725196770.png" alt="No News Screen" width="300">
+  <img src="Screenshot_1725317305.png" alt="WebView Screen" width="300">
 </p>
 
 ### WebView and Error Handling Screens
 <p align="center">
-  <img src="Screenshot_1725317305.png" alt="WebView Screen" width="300">
-  <img src="Screenshot_1725153534.png" alt="Error Handling Screen" width="300">
+    <img src="Screenshot_1725196770.png" alt="No News Screen" width="300">
+    <img src="Screenshot_1725153534.png" alt="Error Handling Screen" width="300">
 </p>
 
 ## **Installation**
