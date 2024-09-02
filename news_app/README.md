@@ -6,23 +6,15 @@ A sleek and efficient Flutter project that delivers the latest news from around 
 
 This app is powered by the **World News API**, providing users with the latest news with minimal design and smooth performance.
 
-### Home Screen
+### Home and No News Screens
 <p align="center">
   <img src="Screenshot_1725317147.png" alt="Home Screen" width="300">
-</p>
-
-### No News Screen
-<p align="center">
   <img src="Screenshot_1725196770.png" alt="No News Screen" width="300">
 </p>
 
-### WebView Screen
+### WebView and Error Handling Screens
 <p align="center">
   <img src="Screenshot_1725317305.png" alt="WebView Screen" width="300">
-</p>
-
-### Error Handling Screen
-<p align="center">
   <img src="Screenshot_1725153534.png" alt="Error Handling Screen" width="300">
 </p>
 
@@ -59,6 +51,7 @@ This app is powered by the **World News API**, providing users with the latest n
 ## **Error Handling**
 
 - Comprehensive error handling to manage network issues, API quota exhaustion, and other potential errors. Showcased in the app's **demonstration video**.
+
 ## **Contributors 🧑🏻‍🤝‍🧑🏼🤍**
 
 This project was developed by:
@@ -66,6 +59,3 @@ This project was developed by:
 - **Omar Abdullah Moharam** - *Flutter Developer*  
   - [GitHub Profile](https://github.com/omarmoharam790)  
   - [Email](mailto:omarmoharam790@gmail.com)
-
-
-
