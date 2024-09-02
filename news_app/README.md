@@ -6,13 +6,13 @@ A sleek and efficient Flutter project that delivers the latest news from around 
 
 This app is powered by the **World News API**, providing users with the latest news with minimal design and smooth performance.
 
-### Home and No News Screens
+### Home and WebView  
 <p align="center">
   <img src="Screenshot_1725317147.png" alt="Home Screen" width="300">
   <img src="Screenshot_1725317305.png" alt="WebView Screen" width="300">
 </p>
 
-### WebView and Error Handling Screens
+### No News Screens and Error Handling Screens
 <p align="center">
     <img src="Screenshot_1725196770.png" alt="No News Screen" width="300">
     <img src="Screenshot_1725153534.png" alt="Error Handling Screen" width="300">
