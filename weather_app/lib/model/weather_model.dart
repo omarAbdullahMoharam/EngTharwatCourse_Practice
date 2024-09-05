@@ -2,7 +2,7 @@ class WeatherModel {
   final String city, weatherState;
   final double temp;
   final double maxTemp, minTemp;
-  final String imagePath;
+  final String? imagePath;
   final String date;
 
   WeatherModel(
@@ -12,7 +12,7 @@ class WeatherModel {
       required this.maxTemp,
       required this.minTemp,
       required this.weatherState,
-      required this.imagePath});
+      this.imagePath});
 
   factory WeatherModel.fromJson(json) {
     return WeatherModel(
