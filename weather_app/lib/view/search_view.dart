@@ -1,4 +1,9 @@
+import 'dart:developer';
+
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:weather_app/model/weather_model.dart';
+import 'package:weather_app/services/weather_service.dart';
 
 class SearchView extends StatelessWidget {
   const SearchView({super.key});
@@ -27,7 +32,14 @@ class SearchView extends StatelessWidget {
           // onChanged: (value) {},
           // will be triggered when the user finishes typing and submits the text field using  presses enter...
           // onSubmitted: (value) {},
+          onSubmitted: (userCity) async {
+            WeatherModel weatherData =
+                await WeatherService(dio: Dio()).getWeatherData(city: userCity);
+            log(weatherData.city.toString());
+            // Navigator.pop(context, weatherData);
+          },
           decoration: InputDecoration(
+
               // labelText: 'City',
               label: const Text(
                 'Search 🌍',

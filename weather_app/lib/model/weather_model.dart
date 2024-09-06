@@ -23,7 +23,7 @@ class WeatherModel {
       temp: json['forecast']['forecastday'][0]['day']['avgtemp_c'],
       maxTemp: json['forecast']['forecastday'][0]['day']['maxtemp_c'],
       minTemp: json['forecast']['forecastday'][0]['day']['mintemp_c'],
-      imagePath: json['forecast']['forcastday'][0]['day']['condition']['icon'],
+      imagePath: json['forecast']['forecastday'][0]['day']['condition']['icon'],
     );
   }
 }
