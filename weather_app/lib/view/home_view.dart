@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:weather_app/widgets/empty_weather.dart';
 import 'package:weather_app/view/search_view.dart';
 
-import '../widgets/weather_info.dart';
-
-
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
 
@@ -40,9 +37,7 @@ class HomeView extends StatelessWidget {
         ],
         backgroundColor: Theme.of(context).primaryColor,
       ),
-      body: weatherData == null
-          ? const EmptyWeatherLocation()
-          : const WeatherInfoBody(),
+      body: const EmptyWeatherLocation(),
     );
   }
 }
