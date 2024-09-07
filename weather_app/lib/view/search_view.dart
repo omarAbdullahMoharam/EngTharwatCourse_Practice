@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:weather_app/model/weather_model.dart';
 import 'package:weather_app/services/weather_service.dart';
 
+WeatherModel? weatherData;
+
 class SearchView extends StatelessWidget {
   const SearchView({super.key});
 
@@ -16,7 +18,7 @@ class SearchView extends StatelessWidget {
           color: Colors.white,
           onPressed: () {
             Navigator.pop(context);
-            // Navigator.of(context).pop(); 
+            // Navigator.of(context).pop();
           },
         ),
         title: const Text(

@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:weather_app/widgets/empty_weather.dart';
 import 'package:weather_app/view/search_view.dart';
 
-import '../model/weather_model.dart';
 import '../widgets/weather_info.dart';
 
-WeatherModel? weatherData;
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
