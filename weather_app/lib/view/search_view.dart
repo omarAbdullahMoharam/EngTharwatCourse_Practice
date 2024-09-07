@@ -16,6 +16,7 @@ class SearchView extends StatelessWidget {
           color: Colors.white,
           onPressed: () {
             Navigator.pop(context);
+            // Navigator.of(context).pop(); 
           },
         ),
         title: const Text(
