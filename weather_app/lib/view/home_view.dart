@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:weather_app/cubits/get_weather_cubit/get_weather_cubit.dart';
 import 'package:weather_app/cubits/get_weather_cubit/get_weather_state.dart';
 import 'package:weather_app/widgets/empty_weather.dart';
@@ -47,11 +48,21 @@ class HomeView extends StatelessWidget {
         if (state is WeatherInitialState) {
           return const EmptyWeatherLocation();
         } else if (state is WeatherLoadedState) {
-          return WeatherInfoBody(
-            weatherData: state.weatherData,
-          );
+          return WeatherInfoBody();
         } else {
-          return const Text('Something went wrong 😞,try again later');
+          return Center(
+            child: Text(
+              'Something went wrong 😞, try again later🌍',
+              style: GoogleFonts.kadwa(
+                fontSize: 24,
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.center,
+              overflow: TextOverflow.visible,
+              maxLines: 2,
+            ),
+          );
         }
       }),
     );

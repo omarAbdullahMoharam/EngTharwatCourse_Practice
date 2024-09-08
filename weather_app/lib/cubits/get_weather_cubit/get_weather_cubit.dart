@@ -8,13 +8,13 @@ import 'get_weather_state.dart';
 
 class GetWeatherCubit extends Cubit<WeatherState> {
   GetWeatherCubit() : super(WeatherInitialState());
+  late WeatherModel weatherData;
 
   Future<void> getWeather(String city) async {
     try {
       // ignore: unused_local_variable
-      WeatherModel weatherData =
-          await WeatherService(dio: Dio()).getWeatherData(city: city);
-      emit(WeatherLoadedState(weatherData: weatherData));
+      weatherData = await WeatherService(dio: Dio()).getWeatherData(city: city);
+      emit(WeatherLoadedState());
     } catch (e) {
       log(e.toString());
       emit(WeatherFailedState());

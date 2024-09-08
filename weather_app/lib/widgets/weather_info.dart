@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather_app/cubits/get_weather_cubit/get_weather_cubit.dart';
 import 'package:weather_app/model/weather_model.dart';
 
+// ignore: must_be_immutable
 class WeatherInfoBody extends StatelessWidget {
-  const WeatherInfoBody({
+  WeatherInfoBody({
     super.key,
-    required this.weatherData,
   });
-  final WeatherModel weatherData;
+  late WeatherModel weatherData;
   @override
   Widget build(BuildContext context) {
+    var weatherData = BlocProvider.of<GetWeatherCubit>(context).weatherData;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(

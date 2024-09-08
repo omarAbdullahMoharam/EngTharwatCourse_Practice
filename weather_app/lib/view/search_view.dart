@@ -36,7 +36,6 @@ class SearchView extends StatelessWidget {
             log(cityName.toString());
             var weatherData = BlocProvider.of<GetWeatherCubit>(context);
             await weatherData.getWeather(cityName);
-
             Navigator.pop(context, weatherData);
           },
           decoration: InputDecoration(
