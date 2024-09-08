@@ -14,7 +14,7 @@ class GetWeatherCubit extends Cubit<WeatherState> {
       // ignore: unused_local_variable
       WeatherModel weatherData =
           await WeatherService(dio: Dio()).getWeatherData(city: city);
-      emit(WeatherLoadedState());
+      emit(WeatherLoadedState(weatherData: weatherData));
     } catch (e) {
       log(e.toString());
       emit(WeatherFailedState());
