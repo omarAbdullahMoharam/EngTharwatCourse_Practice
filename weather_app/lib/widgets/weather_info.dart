@@ -37,11 +37,29 @@ class WeatherInfoBody extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Image.asset(
-                'assets/images/cloudy.png',
+              Image.network(
+                // 'assets/images/cloudy.png',
+                weatherData.imagePath.contains('https:')
+                    ? weatherData.imagePath
+                    : "https:${weatherData.imagePath}",
+                scale: 0.5,
+                errorBuilder: (context, error, stackTrace) {
+                  return const Text(
+                    'Error',
+                    style: TextStyle(
+                      fontSize: 32,
+                    ),
+                  );
+                },
+                loadingBuilder: (context, child, loadingProgress) {
+                  if (loadingProgress == null) {
+                    return child;
+                  }
+                  return const CircularProgressIndicator();
+                },
               ),
               Text(
-                weatherData.temp.toString(),
+                weatherData.temp.round().toString(),
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 32,
@@ -50,13 +68,13 @@ class WeatherInfoBody extends StatelessWidget {
               Column(
                 children: [
                   Text(
-                    'Maxtemp: ${weatherData.maxTemp}',
+                    'Maxtemp: ${weatherData.maxTemp.round()}',
                     style: const TextStyle(
                       fontSize: 16,
                     ),
                   ),
                   Text(
-                    'Mintemp: ${weatherData.minTemp}',
+                    'Mintemp: ${weatherData.minTemp.round()}',
                     style: const TextStyle(
                       fontSize: 16,
                     ),
