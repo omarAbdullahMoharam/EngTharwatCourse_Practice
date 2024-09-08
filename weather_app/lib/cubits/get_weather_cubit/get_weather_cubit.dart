@@ -7,7 +7,7 @@ import 'package:weather_app/services/weather_service.dart';
 import 'get_weather_state.dart';
 
 class GetWeatherCubit extends Cubit<WeatherState> {
-  GetWeatherCubit() : super(InitialState());
+  GetWeatherCubit() : super(WeatherInitialState());
 
   Future<void> getWeather(String city) async {
     try {

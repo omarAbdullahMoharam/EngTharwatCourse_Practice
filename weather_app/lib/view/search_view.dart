@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 class SearchView extends StatelessWidget {
@@ -29,7 +31,7 @@ class SearchView extends StatelessWidget {
           // will be triggered when the user finishes typing and submits the text field using  presses enter...
           // onSubmitted: (value) {},
           onSubmitted: (cityName) async {
-            // log(weatherData.city.toString());
+            log(cityName.toString());
             // Navigator.pop(context, weatherData);
           },
           decoration: InputDecoration(
