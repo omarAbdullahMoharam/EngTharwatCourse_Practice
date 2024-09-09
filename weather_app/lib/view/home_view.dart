@@ -41,14 +41,16 @@ class HomeView extends StatelessWidget {
             ),
           ),
         ],
-        backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Colors.amber,
       ),
       body:
           BlocBuilder<GetWeatherCubit, WeatherState>(builder: (context, state) {
         if (state is WeatherInitialState) {
           return const EmptyWeatherLocation();
         } else if (state is WeatherLoadedState) {
-          return WeatherInfoBody();
+          return WeatherInfoBody(
+            weather: state.weatherData,
+          );
         } else {
           return Center(
             child: Text(

@@ -1,5 +1,3 @@
-// ignore_for_file: use_build_context_synchronously
-
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
@@ -24,7 +22,7 @@ class SearchView extends StatelessWidget {
           'Search a City',
           style: TextStyle(color: Colors.white, fontSize: 24),
         ),
-        backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Colors.amber,
       ),
       body: Center(
           child: Padding(
@@ -37,8 +35,10 @@ class SearchView extends StatelessWidget {
           onSubmitted: (cityName) async {
             log(cityName.toString());
             var weatherData = BlocProvider.of<GetWeatherCubit>(context);
-            await weatherData.getWeather(cityName);
-            Navigator.pop(context, weatherData);
+            weatherData.getWeather(cityName);
+            Navigator.pop(
+              context,
+            );
           },
           decoration: InputDecoration(
 
