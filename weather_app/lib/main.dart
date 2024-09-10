@@ -16,32 +16,32 @@ class WeatherApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // بحدد المكان الى هحتاج انادي ال الاستيت فيه على اساس المكان الى شامل الاتنين مع بعض
-    // عشان انفذ فكره ال shared state اللى هيها الاستيت بتاعتي بعد كل مرة
-    // this done Using BlocProvider and BlocListener
-    // applying the approch of InheritedWidgets
-    // to find the shared widget that will be used in multiple places as
-    //  the same scope concept
     return BlocProvider(
       create: (context) => GetWeatherCubit(),
-      child: Builder(
-        builder: (context) => BlocBuilder<GetWeatherCubit, WeatherState>(
-          builder: (context, state) {
-            return MaterialApp(
-              debugShowCheckedModeBanner: false,
-              theme: ThemeData(
-                // brightness: Brightness.dark,
-                primarySwatch: getThemeColor(
-                  BlocProvider.of<GetWeatherCubit>(context)
-                      .weatherData
-                      ?.weatherState,
+      child: BlocListener<GetWeatherCubit, WeatherState>(
+        listener: (context, state) {
+          if (state is WeatherLoadedState) {
+            // Log to confirm state change
+            log('Weather condition: ${state.weatherData.weatherState}');
+          }
+        },
+        child: Builder(
+          builder: (context) => BlocBuilder<GetWeatherCubit, WeatherState>(
+            builder: (context, state) {
+              return MaterialApp(
+                debugShowCheckedModeBanner: false,
+                theme: ThemeData(
+                  primarySwatch: getThemeColor(
+                    BlocProvider.of<GetWeatherCubit>(context)
+                        .weatherData
+                        ?.weatherState,
+                  ),
                 ),
-                // Colors.blue,
-              ),
-              title: 'Weather App',
-              home: const HomeView(),
-            );
-          },
+                title: 'Weather App',
+                home: const HomeView(),
+              );
+            },
+          ),
         ),
       ),
     );
