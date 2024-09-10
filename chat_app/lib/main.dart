@@ -13,9 +13,7 @@ class ScholarChat extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SafeArea(
-        child: SignIn(),
-      ),
+      home: SignIn(),
     );
   }
 }

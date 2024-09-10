@@ -16,7 +16,7 @@ class SignIn extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Spacer(
-              flex: 1,
+              flex: 2,
             ),
             const Image(
               image: AssetImage('assets/images/scholar.png'),
@@ -96,7 +96,7 @@ class SignIn extends StatelessWidget {
               ],
             ),
             const Spacer(
-              flex: 4,
+              flex: 3,
             ),
           ],
         ),
