@@ -41,7 +41,7 @@ class HomeView extends StatelessWidget {
             ),
           ),
         ],
-        backgroundColor: Colors.amber,
+        backgroundColor: Theme.of(context).primaryColor,
       ),
       body:
           BlocBuilder<GetWeatherCubit, WeatherState>(builder: (context, state) {

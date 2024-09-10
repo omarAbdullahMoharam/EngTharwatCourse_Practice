@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_app/cubits/get_weather_cubit/get_weather_cubit.dart';
+import 'package:weather_app/main.dart';
 
 class SearchView extends StatelessWidget {
   const SearchView({super.key});
@@ -22,7 +23,7 @@ class SearchView extends StatelessWidget {
           'Search a City',
           style: TextStyle(color: Colors.white, fontSize: 24),
         ),
-        backgroundColor: Colors.amber,
+        backgroundColor: Theme.of(context).primaryColor,
       ),
       body: Center(
           child: Padding(
@@ -97,7 +98,7 @@ class SearchView extends StatelessWidget {
               // ),
               ),
           style: const TextStyle(
-            color: Colors.orange,
+            // color: Colors.orange,
             fontSize: 24,
           ),
           textAlign: TextAlign.justify,
