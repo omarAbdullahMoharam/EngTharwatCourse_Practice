@@ -1,15 +1,17 @@
+import 'package:chat_app/constants.dart';
 import 'package:flutter/material.dart';
 
 import '../components/custom_button.dart';
 import '../components/custom_textfield.dart';
 
 class RegisterPage extends StatelessWidget {
+  static String id = 'RegisterPage';
   const RegisterPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF2B475E),
+      backgroundColor: kPrimaryColor,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15),
         child: Column(
