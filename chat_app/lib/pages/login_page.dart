@@ -5,8 +5,9 @@ import '../components/custom_textfield.dart';
 import '../components/custom_button.dart';
 import 'register_page.dart';
 
-class Login extends StatelessWidget {
-  const Login({super.key});
+class LoginPage extends StatelessWidget {
+  static String id = 'Login';
+  const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {

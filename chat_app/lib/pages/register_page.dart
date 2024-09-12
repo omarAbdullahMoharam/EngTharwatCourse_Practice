@@ -5,7 +5,12 @@ import '../components/custom_button.dart';
 import '../components/custom_textfield.dart';
 
 class RegisterPage extends StatelessWidget {
+  // ممكن متعملهوش استاتك لكن كده عشان ت access
+  // ليها لازم تاخد anonymous object
+  // ف انت ممكن تحل ده عن طريق انك تخليه Static
+
   static String id = 'RegisterPage';
+
   const RegisterPage({super.key});
 
   @override
