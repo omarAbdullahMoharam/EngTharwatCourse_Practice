@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../components/custom_textfield.dart';
 import '../components/custom_button.dart';
+import '../components/custom_textfield.dart';
 
-class SignIn extends StatelessWidget {
-  const SignIn({super.key});
+class RegisterPage extends StatelessWidget {
+  const RegisterPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +38,7 @@ class SignIn extends StatelessWidget {
                 const Row(
                   children: [
                     Text(
-                      'Sign In',
+                      'Register',
                       style: TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.bold,
@@ -66,7 +66,7 @@ class SignIn extends StatelessWidget {
                 const SizedBox(
                   height: 25,
                 ),
-                const CustomButton(),
+                const CustomButton(label: 'Register'),
                 const SizedBox(
                   height: 10,
                 ),
@@ -74,7 +74,7 @@ class SignIn extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text(
-                      'Dont\'t have an account?',
+                      'Already have an account?',
                       style: TextStyle(
                         fontSize: 18,
                         color: Colors.white,
@@ -82,12 +82,14 @@ class SignIn extends StatelessWidget {
                     ),
                     // const Spacer(),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
                       child: const Text(
-                        'Register',
+                        'Login',
                         style: TextStyle(
                           fontSize: 18,
-                          color: Colors.blue,
+                          color: Color(0xFFC7EDE6),
                         ),
                       ),
                     )
