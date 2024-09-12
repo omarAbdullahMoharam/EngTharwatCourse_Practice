@@ -26,9 +26,7 @@ class RegisterPage extends StatelessWidget {
               // const Spacer(
               //   flex: 2,
               // ),
-              const SizedBox(
-                height: 75,
-              ),
+              const SizedBox(height: 75),
               const Image(
                 image: AssetImage('assets/images/scholar.png'),
                 height: 100,
@@ -45,9 +43,7 @@ class RegisterPage extends StatelessWidget {
               // const Spacer(
               //   flex: 2,
               // ),
-              const SizedBox(
-                height: 160,
-              ),
+              const SizedBox(height: 160),
               const Row(
                 children: [
                   Text(
@@ -62,43 +58,19 @@ class RegisterPage extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 10,
-              ),
+              const SizedBox(height: 10),
               const CustomTextField(
                 hintText: 'Email',
                 suffixIcon: Icons.email,
               ),
-              // const CustomTextField(
-              //   hintText: 'Email',
-              //   suffixIcon: Icons.email,
-              // ),
-              // const CustomTextField(
-              //   hintText: 'Email',
-              //   suffixIcon: Icons.email,
-              // ),
-              // const CustomTextField(
-              //   hintText: 'Email',
-              //   suffixIcon: Icons.email,
-              // ),
-              // const CustomTextField(
-              //   hintText: 'Email',
-              //   suffixIcon: Icons.email,
-              // ),
-              const SizedBox(
-                height: 10,
-              ),
+              const SizedBox(height: 10),
               const CustomTextField(
                 hintText: 'Password',
                 suffixIcon: Icons.password,
               ),
-              const SizedBox(
-                height: 25,
-              ),
+              const SizedBox(height: 25),
               const CustomButton(label: 'Register'),
-              const SizedBox(
-                height: 10,
-              ),
+              const SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -127,9 +99,7 @@ class RegisterPage extends StatelessWidget {
               // const Spacer(
               //   flex: 3,
               // ),
-              const SizedBox(
-                height: 60,
-              )
+              const SizedBox(height: 60),
             ],
           ),
         ),
