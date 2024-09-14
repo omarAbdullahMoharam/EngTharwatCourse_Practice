@@ -57,17 +57,19 @@ class LoginPage extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 10),
-                  const CustomTextField(
+                  CustomTextField(
                     hintText: 'Email',
                     suffixIcon: Icons.email,
+                    onChanged: (String userData) {},
                   ),
                   const SizedBox(height: 10),
-                  const CustomTextField(
+                  CustomTextField(
                     hintText: 'Password',
                     suffixIcon: Icons.password,
+                    onChanged: (String userData) {},
                   ),
                   const SizedBox(height: 25),
-                  const CustomButton(label: 'Sign In'),
+                  CustomButton(label: 'Sign In', onPressed: () {}),
                   const SizedBox(height: 10),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,

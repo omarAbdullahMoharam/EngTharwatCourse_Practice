@@ -1,9 +1,18 @@
+// ignore_for_file: use_build_context_synchronously
+
+import 'dart:developer';
+
 import 'package:chat_app/constants.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../components/custom_button.dart';
+import '../components/custom_snackbar.dart';
 import '../components/custom_textfield.dart';
+import '../services/register.dart';
+import 'login_page.dart';
 
+// ignore: must_be_immutable
 class RegisterPage extends StatelessWidget {
   // ممكن متعملهوش استاتك لكن كده عشان ت access
   // ليها لازم تاخد anonymous object
@@ -59,17 +68,70 @@ class RegisterPage extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 10),
-              const CustomTextField(
+              CustomTextField(
+                onChanged: (userData) => email = userData.replaceAll(' ', ''),
                 hintText: 'Email',
                 suffixIcon: Icons.email,
               ),
               const SizedBox(height: 10),
-              const CustomTextField(
+              CustomTextField(
+                onChanged: (userData) => password = userData,
                 hintText: 'Password',
                 suffixIcon: Icons.password,
               ),
               const SizedBox(height: 25),
-              const CustomButton(label: 'Register'),
+              CustomButton(
+                  label: 'Register',
+                  onPressed: () async {
+                    try {
+                      await registerUser();
+                      showSnackBar(
+                        context: context,
+                        textEXC: 'Account created successfully',
+                        icon: Icons.check_circle,
+                        color: Colors.green,
+                      );
+                      Future.delayed(const Duration(seconds: 1), () {
+                        Navigator.pushNamed(context, LoginPage.id);
+                      });
+                    } on FirebaseAuthException catch (e) {
+                      if (e.code == 'weak-password') {
+                        showSnackBar(
+                            context: context,
+                            textEXC: 'The password provided is too weak.',
+                            icon: Icons.error,
+                            color: Colors.red);
+                      } else if (e.code == 'email-already-in-use') {
+                        showSnackBar(
+                          context: context,
+                          textEXC: 'The account already exists for that email.',
+                          icon: Icons.error,
+                          color: Colors.red,
+                        );
+                      } else if (e.code == 'invalid-email') {
+                        showSnackBar(
+                          context: context,
+                          textEXC: 'The email is badly formatted.',
+                          icon: Icons.error,
+                          color: Colors.red,
+                        );
+                      } else {
+                        showSnackBar(
+                            context: context,
+                            textEXC: 'Account created successfully',
+                            icon: Icons.check_circle,
+                            color: Colors.green);
+                      }
+                    } catch (e) {
+                      log(e.toString());
+                      showSnackBar(
+                        context: context,
+                        textEXC: e.toString(),
+                        icon: Icons.error,
+                        color: Colors.red,
+                      );
+                    }
+                  }),
               const SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -106,4 +168,11 @@ class RegisterPage extends StatelessWidget {
       ),
     );
   }
+
+  // Future<void> registerUser() async {
+  //   UserCredential user;
+  //   user = await FirebaseAuth.instance
+  //       .createUserWithEmailAndPassword(email: email!, password: password!);
+  //   log(user.user!.email.toString());
+  // }
 }

@@ -6,6 +6,8 @@ import 'pages/login_page.dart';
 import 'pages/register_page.dart';
 
 void main() async {
+  // Initialize Firebase
+
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
