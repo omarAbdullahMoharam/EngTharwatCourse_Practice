@@ -21,7 +21,23 @@ class CustomTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
+      validator: (input) {
+        // if (email != null) {
+        //   if (value!.isEmpty || !value.contains('@')) {
+        //     return 'Please enter a valid email address';
+        //   }
+        // } else if (password != null) {
+        //   if (value!.isEmpty || value.length < 6) {
+        //     return 'Please enter a valid password';
+        //   }
+        // }
+        // return null;
+        if (input!.isEmpty) {
+          return 'Please enter your $hintText';
+        }
+        return null;
+      },
       onChanged: onChanged,
       cursorColor: Colors.blue,
       style: const TextStyle(color: Colors.white, fontSize: 18),
