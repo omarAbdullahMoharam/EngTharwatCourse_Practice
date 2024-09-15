@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
-class CustomTextField extends StatelessWidget {
-  CustomTextField({
+class CustomTextFormField extends StatelessWidget {
+  CustomTextFormField({
     super.key,
     required this.hintText,
     required this.suffixIcon,

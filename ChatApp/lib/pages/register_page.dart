@@ -9,7 +9,7 @@ import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 import '../components/custom_button.dart';
 import '../components/custom_snackbar.dart';
-import '../components/custom_textfield.dart';
+import '../components/custom_textFormField.dart';
 import '../services/register.dart';
 
 // ignore: must_be_immutable
@@ -27,14 +27,14 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
-  bool isLoading = false;
+  bool _isLoading = false;
 
   GlobalKey<FormState> formKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
     return ModalProgressHUD(
-      inAsyncCall: isLoading,
+      inAsyncCall: _isLoading,
       child: Scaffold(
         backgroundColor: kPrimaryColor,
         body: Padding(
@@ -81,14 +81,14 @@ class _RegisterPageState extends State<RegisterPage> {
                     ],
                   ),
                   const SizedBox(height: 10),
-                  CustomTextField(
+                  CustomTextFormField(
                     onChanged: (userData) =>
                         email = userData.replaceAll(' ', ''),
                     hintText: 'Email',
                     suffixIcon: Icons.email,
                   ),
                   const SizedBox(height: 10),
-                  CustomTextField(
+                  CustomTextFormField(
                     onChanged: (userData) => password = userData,
                     hintText: 'Password',
                     suffixIcon: Icons.password,
@@ -99,7 +99,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       onPressed: () async {
                         if (formKey.currentState!.validate()) {
                           setState(() {
-                            isLoading = true;
+                            _isLoading = true;
                           });
                           // formKey.currentState!.save();
                           try {
@@ -148,7 +148,7 @@ class _RegisterPageState extends State<RegisterPage> {
                               // );
                             }
                             setState(() {
-                              isLoading = false;
+                              _isLoading = false;
                             });
                           }
                         }
