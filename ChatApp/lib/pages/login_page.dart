@@ -1,7 +1,5 @@
 // ignore_for_file: use_build_context_synchronously
 
-import 'dart:developer';
-
 import 'package:chat_app/constants.dart';
 import 'package:chat_app/pages/chat_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -99,7 +97,7 @@ class _LoginPageState extends State<LoginPage> {
                             setState(() {
                               _isloading = true;
                             });
-                            // formKey.currentState!.save();
+
                             try {
                               await loginUser(
                                 email: email!,
@@ -108,6 +106,7 @@ class _LoginPageState extends State<LoginPage> {
                               setState(() {
                                 _isloading = false;
                               });
+
                               showSnackBar(
                                 context: context,
                                 textEXC: 'Logged in successfully',
@@ -124,6 +123,10 @@ class _LoginPageState extends State<LoginPage> {
                                 );
                               });
                             } on FirebaseAuthException catch (e) {
+                              setState(() {
+                                _isloading = false;
+                              });
+
                               if (e.code == 'user-not-found') {
                                 showSnackBar(
                                   context: context,
@@ -148,18 +151,14 @@ class _LoginPageState extends State<LoginPage> {
                                   color: Colors.red,
                                 );
                               } else {
-                                log(e.toString());
-
-                                // showSnackBar(
-                                //   context: context,
-                                //   textEXC: 'Account created successfully',
-                                //   icon: Icons.check_circle,
-                                //   color: Colors.green,
-                                // );
+                                showSnackBar(
+                                  context: context,
+                                  textEXC:
+                                      'Wrong Email or password provided for that user.',
+                                  icon: Icons.error,
+                                  color: Colors.red,
+                                );
                               }
-                              setState(() {
-                                _isloading = false;
-                              });
                             }
                           }
                         },

@@ -9,9 +9,11 @@ void showSnackBar(
     SnackBar(
       content: Row(
         children: [
-          Text(
-            textEXC,
-            style: const TextStyle(color: Colors.white),
+          Expanded(
+            child: Text(
+              textEXC,
+              style: const TextStyle(color: Colors.white),
+            ),
           ),
           const Spacer(),
           Icon(icon, color: color),
