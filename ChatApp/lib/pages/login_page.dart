@@ -94,7 +94,6 @@ class _LoginPageState extends State<LoginPage> {
                             setState(() {
                               _isloading = true;
                             });
-
                             try {
                               await loginUser(
                                 email: email!,

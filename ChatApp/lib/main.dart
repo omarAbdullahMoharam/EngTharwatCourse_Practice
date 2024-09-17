@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 import 'firebase_options.dart';
+import 'pages/chat_page.dart';
 import 'pages/login_page.dart';
 import 'pages/register_page.dart';
 
@@ -25,6 +26,7 @@ class ScholarChat extends StatelessWidget {
       routes: {
         LoginPage.id: (context) => const LoginPage(),
         RegisterPage.id: (context) => const RegisterPage(),
+        ChatPage.id: (context) => const ChatPage(),
       },
       initialRoute: LoginPage.id,
     );
