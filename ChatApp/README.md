@@ -52,6 +52,7 @@ flutter run
 Include screenshots of the app in action (e.g., login page , register page, chat interface).
 
 Login Screen
+
 Register Screen
 Chat Screen
 

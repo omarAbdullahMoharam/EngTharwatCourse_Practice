@@ -11,7 +11,7 @@ class ChatBubleForFriend extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: Alignment.centerRight,
+      alignment: Alignment.centerLeft,
       child: Container(
         padding: const EdgeInsets.only(
           left: 32.0,
@@ -28,7 +28,7 @@ class ChatBubleForFriend extends StatelessWidget {
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(45),
             topRight: Radius.circular(45),
-            bottomLeft: Radius.circular(45),
+            bottomRight: Radius.circular(45),
           ),
         ),
         child: Text(

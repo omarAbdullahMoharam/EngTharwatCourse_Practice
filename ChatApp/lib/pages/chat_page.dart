@@ -57,21 +57,33 @@ class ChatPage extends StatelessWidget {
             body: Column(
               children: [
                 Expanded(
-                  child: ListView.builder(
-                    reverse: true,
-                    controller: _controller,
-                    itemCount: chatMessages.length,
-                    itemBuilder: (context, index) {
-                      return chatMessages[index].senderID == userEmail
+                    child: ListView.builder(
+                  reverse: true,
+                  controller: _controller,
+                  itemCount: chatMessages.length,
+                  itemBuilder: (context, index) {
+                    final message = chatMessages[index];
+                    if (userEmail != null) {
+                      return message.senderID == userEmail
                           ? ChatBuble(
-                              message: chatMessages[index],
+                              message: message,
                             )
                           : ChatBubleForFriend(
-                              message: chatMessages[index],
+                              message: message,
                             );
-                    },
-                  ),
-                ),
+                    } else {
+                      return const SizedBox.shrink(
+                        child: Center(
+                          child: CircularProgressIndicator(
+                            color: kPrimaryColor,
+                            strokeWidth: 2,
+                            backgroundColor: Colors.white,
+                          ),
+                        ),
+                      ); // Return an empty widget if values are null
+                    }
+                  },
+                )),
                 Padding(
                   padding: const EdgeInsets.only(
                     left: 16,
@@ -89,7 +101,7 @@ class ChatPage extends StatelessWidget {
                           kSenderID: userEmail,
                         },
                       );
-                      log(userEmail as String);
+                      // log(userEmail as String);
                       log(value);
                       _controller.animateTo(
                         0,
