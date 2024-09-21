@@ -19,7 +19,7 @@ lib/
 ├── main.dart                     
 
 
-assets/
+assets/                  
 ├── fonts/           
 ├── images/         
 
