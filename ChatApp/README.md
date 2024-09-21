@@ -64,7 +64,7 @@ Include screenshots of the app in action (e.g., login page , register page, chat
   <img src="https://github.com/user-attachments/assets/53634463-2163-4ddb-bbe1-acaecd0e0fca" alt="Register 2" width="200">
   <img src="https://github.com/user-attachments/assets/28741cde-da8f-4db3-b092-92486f012408" alt="Weak Password" width="200">
   <img src="https://github.com/user-attachments/assets/3ec7ae9d-1d64-4966-bd7c-9da3ca3444bf" alt="Register 3" width="200">
-  <img src="https://github.com/user-attachments/assets/27d42eac-a7c1-4477-9ac9-a6bf486d5d4d" alt="Register 4" width="200">
+
 </p>
 
 <h3>Chat Screen</h3>
@@ -90,4 +90,4 @@ Create a pull request.
 
 Contact
 For any inquiries, reach out via:
-[Email]:(mailto:omarmoharam790@gmail.com)
+[Email]: (mailto:omarmoharam790@gmail.com)
