@@ -8,8 +8,8 @@
 - **User Authentication**: Secure login and registration via Firebase.
 
 ## Project Structure
-
-lib/
+ 
+lib/                 
 ├── components/     
 ├── models/                   
 ├── pages/              
