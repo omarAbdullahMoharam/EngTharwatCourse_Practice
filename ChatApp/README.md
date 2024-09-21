@@ -90,5 +90,4 @@ Create a pull request.
 
 Contact
 For any inquiries, reach out via:
-
 [Email]:(mailto:omarmoharam790@gmail.com)
