@@ -69,6 +69,7 @@ Include screenshots of the app in action (e.g., login page , register page, chat
 
 <h3>Chat Screen</h3>
 <p align="center">
+   <img src="https://github.com/user-attachments/assets/27d42eac-a7c1-4477-9ac9-a6bf486d5d4d" alt="Register 4" width="200">
   <img src="https://github.com/user-attachments/assets/afd95d0f-89a4-4331-b52f-339473f03d6b" alt="Chat Screen" width="200">
 </p>
 
