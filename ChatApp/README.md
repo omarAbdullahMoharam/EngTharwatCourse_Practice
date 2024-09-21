@@ -11,12 +11,12 @@
 
 lib/
 ├── components/     
-├── models/           
-├── pages/            
+├── models/                   
+├── pages/              
 ├── services/
-├── constants.dart
-├── firebase_options.dart
-├── main.dart  
+├── constants.dart        
+├── firebase_options.dart       
+├── main.dart        
 assets/
 ├── fonts/           
 ├── images/         
