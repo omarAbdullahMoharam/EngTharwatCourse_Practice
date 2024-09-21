@@ -10,17 +10,17 @@
 ## Project Structure
 
 lib/
-├── components/        # Reusable UI components
-├── models/            # Data models for chat, user, etc.
-├── pages/             # Screens (login, chat, etc.)
-├── services/          # Firebase services, authentication, database
-├── constants.dart     # App-wide constants (colors, styles, etc.)
-├── firebase_options.dart  # Firebase configuration
-├── main.dart          # Main entry point of the app
+├── components/     
+├── models/           
+├── pages/            
+├── services/       
+├── constants.dart    
+├── firebase_options.dart 
+├── main.dart       
 
 assets/
-├── fonts/             # Custom fonts
-├── images/            # Image assets
+├── fonts/           
+├── images/         
 
 
 ## Installation
