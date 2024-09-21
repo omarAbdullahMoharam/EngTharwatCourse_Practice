@@ -1,5 +1,7 @@
 // ignore_for_file: use_build_context_synchronously
 
+import 'dart:developer';
+
 import 'package:chat_app/constants.dart';
 import 'package:chat_app/pages/chat_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -82,6 +84,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       const SizedBox(height: 10),
                       CustomTextFormField(
+                        obsecure: true,
                         onChanged: (userData) => password = userData,
                         hintText: 'Password',
                         suffixIcon: Icons.password,
@@ -99,6 +102,7 @@ class _LoginPageState extends State<LoginPage> {
                                 email: email!,
                                 password: password!,
                               );
+                              log(email as String);
                               setState(() {
                                 _isloading = false;
                               });
@@ -110,14 +114,16 @@ class _LoginPageState extends State<LoginPage> {
                                 color: Colors.green,
                               );
 
-                              Future.delayed(const Duration(seconds: 1), () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => ChatPage(),
-                                  ),
-                                );
-                              });
+                              Future.delayed(
+                                const Duration(seconds: 1),
+                                () {
+                                  Navigator.pushNamed(
+                                    context,
+                                    ChatPage.id,
+                                    arguments: email,
+                                  );
+                                },
+                              );
                             } on FirebaseAuthException catch (e) {
                               setState(() {
                                 _isloading = false;

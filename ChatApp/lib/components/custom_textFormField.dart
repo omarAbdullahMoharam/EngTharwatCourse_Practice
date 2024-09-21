@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
-class CustomTextFormField extends StatelessWidget {
+class CustomTextFormField extends StatefulWidget {
   CustomTextFormField({
     super.key,
     required this.hintText,
@@ -11,34 +11,31 @@ class CustomTextFormField extends StatelessWidget {
     this.email,
     this.password,
     required this.onChanged,
+    this.obsecure = false,
   });
   final String? email;
   final String? password;
   final String hintText;
   final IconData suffixIcon;
-
+  bool? obsecure;
   Function(String userData) onChanged;
 
   @override
+  State<CustomTextFormField> createState() => _CustomTextFormFieldState();
+}
+
+class _CustomTextFormFieldState extends State<CustomTextFormField> {
+  @override
   Widget build(BuildContext context) {
     return TextFormField(
+      obscureText: widget.obsecure!,
       validator: (input) {
-        // if (email != null) {
-        //   if (value!.isEmpty || !value.contains('@')) {
-        //     return 'Please enter a valid email address';
-        //   }
-        // } else if (password != null) {
-        //   if (value!.isEmpty || value.length < 6) {
-        //     return 'Please enter a valid password';
-        //   }
-        // }
-        // return null;
         if (input!.isEmpty) {
-          return 'Please enter your $hintText';
+          return 'Please enter your ${widget.hintText}';
         }
         return null;
       },
-      onChanged: onChanged,
+      onChanged: widget.onChanged,
       cursorColor: Colors.blue,
       style: const TextStyle(color: Colors.white, fontSize: 18),
       decoration: InputDecoration(
@@ -46,13 +43,18 @@ class CustomTextFormField extends StatelessWidget {
         enabledBorder: const OutlineInputBorder(
           borderSide: BorderSide(color: Colors.white),
         ),
-        labelText: hintText,
+        labelText: widget.hintText,
         labelStyle: const TextStyle(
           color: Colors.white,
         ),
-        suffixIcon: Icon(
-          suffixIcon,
+        suffixIcon: IconButton(
+          icon: Icon(widget.suffixIcon),
           color: Colors.white,
+          onPressed: () {
+            setState(() {
+              widget.obsecure = !widget.obsecure!;
+            });
+          },
         ),
         focusedBorder: const OutlineInputBorder(
           borderSide: BorderSide(color: Colors.blue),

@@ -5,3 +5,6 @@ const kRecieverColor = Color(0xFFE7E7E7);
 const kSenderColor = Color(0xFF2B475E);
 const kLogoImage = 'assets/images/scholar.png';
 const kMessageCollection = 'messages';
+const kMessage = 'message';
+const kSentAt = 'sentAt';
+const kSenderID = 'senderID';

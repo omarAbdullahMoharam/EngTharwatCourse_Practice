@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
+import '../models/message.dart';
 
-class ChatBuble extends StatelessWidget {
-  const ChatBuble({
+class ChatBubleForFriend extends StatelessWidget {
+  const ChatBubleForFriend({
     super.key,
     required this.message,
-    this.isMe,
-    this.isHim,
   });
-  final bool? isMe, isHim;
-  final String message;
+  final Message message;
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: Alignment.centerLeft,
+      alignment: Alignment.centerRight,
       child: Container(
         padding: const EdgeInsets.only(
           left: 32.0,
@@ -26,23 +23,16 @@ class ChatBuble extends StatelessWidget {
           horizontal: 8,
           vertical: 8,
         ),
-
-        // color: Colors.blue,
-        // width: double.infinity,
-        // height: double.infinity,
-        // width: 300,
-        // height: 75,
         decoration: const BoxDecoration(
-          color: kPrimaryColor,
+          color: Color(0xFF006D84),
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(45),
             topRight: Radius.circular(45),
-            bottomRight: Radius.circular(45),
-            // bottomLeft: Radius.circular(45),
+            bottomLeft: Radius.circular(45),
           ),
         ),
         child: Text(
-          message,
+          message.message.toString(),
           style: const TextStyle(
             color: Colors.white,
             fontSize: 18,

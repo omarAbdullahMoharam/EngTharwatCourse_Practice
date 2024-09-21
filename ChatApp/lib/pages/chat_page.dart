@@ -1,25 +1,37 @@
 import 'dart:developer';
 
 import 'package:chat_app/constants.dart';
+import 'package:chat_app/models/message.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-import '../components/chat_buble.dart';
+import '../components/reciever_buble.dart';
+import '../components/sender_buble.dart';
 
 // ignore: must_be_immutable
 class ChatPage extends StatelessWidget {
   ChatPage({super.key});
   static String id = 'ChatPage';
   TextEditingController messageController = TextEditingController();
+  final _controller = ScrollController();
   CollectionReference messages =
       FirebaseFirestore.instance.collection(kMessageCollection);
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<QuerySnapshot>(
-      future: messages.get(),
+    var userEmail = ModalRoute.of(context)!.settings.arguments;
+    // String _userEmail=ModalRoute.of(context)!.settings.arguments as String;
+
+    return StreamBuilder<QuerySnapshot>(
+      stream: messages.orderBy(kSentAt, descending: true).snapshots(),
       builder: (BuildContext context, snapshot) {
         if (snapshot.hasData) {
-          log(snapshot.data!.docs[0]['message'].length.toString());
+          List<Message> chatMessages = [];
+          for (int i = 0; i < snapshot.data!.docs.length; i++) {
+            chatMessages.add(
+              Message.fromJson(snapshot.data!.docs[i]),
+            );
+          }
+          // log(snapshot.data!.docs[0]['message'].length.toString());
           return Scaffold(
             appBar: AppBar(
               automaticallyImplyLeading: false,
@@ -33,7 +45,10 @@ class ChatPage extends StatelessWidget {
                   ),
                   const Text(
                     'Chat',
-                    style: TextStyle(color: Colors.white, fontSize: 25),
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 25,
+                    ),
                   ),
                 ],
               ),
@@ -43,22 +58,44 @@ class ChatPage extends StatelessWidget {
               children: [
                 Expanded(
                   child: ListView.builder(
+                    reverse: true,
+                    controller: _controller,
+                    itemCount: chatMessages.length,
                     itemBuilder: (context, index) {
-                      return const ChatBuble(
-                          message: 'Hello i\'m a new user here ');
+                      return chatMessages[index].senderID == userEmail
+                          ? ChatBuble(
+                              message: chatMessages[index],
+                            )
+                          : ChatBubleForFriend(
+                              message: chatMessages[index],
+                            );
                     },
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
-                      left: 16, right: 16, top: 5, bottom: 5),
+                    left: 16,
+                    right: 16,
+                    top: 5,
+                    bottom: 5,
+                  ),
                   child: TextField(
                     controller: messageController,
                     onSubmitted: (value) {
-                      messages.add({
-                        'message': value,
-                      });
+                      messages.add(
+                        {
+                          kMessage: value,
+                          kSentAt: DateTime.now(),
+                          kSenderID: userEmail,
+                        },
+                      );
+                      log(userEmail as String);
                       log(value);
+                      _controller.animateTo(
+                        0,
+                        duration: const Duration(microseconds: 500),
+                        curve: Curves.easeInCirc,
+                      );
                       messageController.clear();
                     },
                     cursorColor: kPrimaryColor,
@@ -95,11 +132,12 @@ class ChatPage extends StatelessWidget {
                           ),
                           borderRadius: BorderRadius.circular(10)),
                       focusedBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(
-                            width: 2.0,
-                            color: kPrimaryColor,
-                          ),
-                          borderRadius: BorderRadius.circular(10)),
+                        borderSide: const BorderSide(
+                          width: 2.0,
+                          color: kPrimaryColor,
+                        ),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
                     ),
                   ),
                 ),
@@ -115,6 +153,8 @@ class ChatPage extends StatelessWidget {
     );
   }
 }
+
+// 🔍🔍🔍🔍🔍
 
 //🚨🔻🔻 You can make The same UI Using LisTile as follows 🚨🔻🔻
 class CustomTextInput extends StatelessWidget {

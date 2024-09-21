@@ -2,12 +2,13 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 import 'dart:developer';
 
-String? email;
-String? password;
+// ignore: unused_element
+String? _email;
+String? _password;
 Future<void> loginUser({email, password}) async {
   UserCredential user;
   user = await FirebaseAuth.instance
       .signInWithEmailAndPassword(email: email!, password: password!);
   log(user.user!.email.toString());
-  log(password.toString());
+  log(_password.toString());
 }
