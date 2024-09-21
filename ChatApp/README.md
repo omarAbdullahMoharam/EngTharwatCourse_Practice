@@ -51,19 +51,26 @@ flutter run
 ## Screenshots
 Include screenshots of the app in action (e.g., login page , register page, chat interface).
 
-Login Screen ![Screenshot_1726891869](https://github.com/user-attachments/assets/a0b453ce-a52e-4a62-be91-0aaa5c55cdf1)
-             ![Screenshot_1726892271](https://github.com/user-attachments/assets/cb753742-3ce9-4abb-b9f9-607d34ba54b5)
-             ![Screenshot_1726892326](https://github.com/user-attachments/assets/0aa701d3-d552-4a40-954a-0040ff812345)
-             
+<h3>Login Screen</h3>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a0b453ce-a52e-4a62-be91-0aaa5c55cdf1" alt="Login 1" width="200">
+  <img src="https://github.com/user-attachments/assets/cb753742-3ce9-4abb-b9f9-607d34ba54b5" alt="Login 2" width="200">
+  <img src="https://github.com/user-attachments/assets/0aa701d3-d552-4a40-954a-0040ff812345" alt="Login 3" width="200">
+</p>
 
-Register Screen ![Screenshot_1726892333](https://github.com/user-attachments/assets/d2051c7c-ff3d-4d00-88b2-87c0b01f9fd6)
-                ![Screenshot_1726892412](https://github.com/user-attachments/assets/53634463-2163-4ddb-bbe1-acaecd0e0fca)
-                ![weakPass](https://github.com/user-attachments/assets/28741cde-da8f-4db3-b092-92486f012408)
-                ![Screenshot_1726892551](https://github.com/user-attachments/assets/3ec7ae9d-1d64-4966-bd7c-9da3ca3444bf)
-                ![Screenshot_1726893875](https://github.com/user-attachments/assets/27d42eac-a7c1-4477-9ac9-a6bf486d5d4d)
+<h3>Register Screen</h3>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d2051c7c-ff3d-4d00-88b2-87c0b01f9fd6" alt="Register 1" width="200">
+  <img src="https://github.com/user-attachments/assets/53634463-2163-4ddb-bbe1-acaecd0e0fca" alt="Register 2" width="200">
+  <img src="https://github.com/user-attachments/assets/28741cde-da8f-4db3-b092-92486f012408" alt="Weak Password" width="200">
+  <img src="https://github.com/user-attachments/assets/3ec7ae9d-1d64-4966-bd7c-9da3ca3444bf" alt="Register 3" width="200">
+  <img src="https://github.com/user-attachments/assets/27d42eac-a7c1-4477-9ac9-a6bf486d5d4d" alt="Register 4" width="200">
+</p>
 
-
-Chat Screen ![Screenshot_1726899760](https://github.com/user-attachments/assets/afd95d0f-89a4-4331-b52f-339473f03d6b)
+<h3>Chat Screen</h3>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/afd95d0f-89a4-4331-b52f-339473f03d6b" alt="Chat Screen" width="200">
+</p>
 
 
 ## Technologies Used
