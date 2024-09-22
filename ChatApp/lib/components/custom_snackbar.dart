@@ -20,6 +20,7 @@ void showSnackBar(
         ],
       ),
       backgroundColor: const Color.fromARGB(255, 29, 35, 72),
+      duration: const Duration(milliseconds: 700),
     ),
   );
 }

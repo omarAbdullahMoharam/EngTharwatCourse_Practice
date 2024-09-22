@@ -31,10 +31,10 @@ class ChatPage extends StatelessWidget {
               Message.fromJson(snapshot.data!.docs[i]),
             );
           }
-          // log(snapshot.data!.docs[0]['message'].length.toString());
           return Scaffold(
             appBar: AppBar(
-              automaticallyImplyLeading: false,
+              automaticallyImplyLeading: true,
+              iconTheme: const IconThemeData(color: Colors.white, size: 30),
               centerTitle: true,
               title: Row(
                 mainAxisSize: MainAxisSize.min,

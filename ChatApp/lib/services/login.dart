@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'dart:developer';
 
 // ignore: unused_element
-String? _email;
+String? loginEmail;
 String? _password;
 Future<void> loginUser({email, password}) async {
   UserCredential user;

@@ -23,7 +23,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  String? email;
+  String? localEmail;
   String? password;
   bool _isloading = false;
   GlobalKey<FormState> key = GlobalKey();
@@ -56,9 +56,6 @@ class _LoginPageState extends State<LoginPage> {
                       color: Colors.white,
                     ),
                   ),
-                  // const Spacer(
-                  //   flex: 2,
-                  // ),
                   const SizedBox(height: 160),
                   Column(
                     children: [
@@ -78,7 +75,9 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       const SizedBox(height: 10),
                       CustomTextFormField(
-                        onChanged: (userData) => email = userData,
+                        onChanged: (userData) {
+                          localEmail = userData;
+                        },
                         hintText: 'Email',
                         suffixIcon: Icons.email,
                       ),
@@ -88,6 +87,7 @@ class _LoginPageState extends State<LoginPage> {
                         onChanged: (userData) => password = userData,
                         hintText: 'Password',
                         suffixIcon: Icons.password,
+                        iconType: true,
                       ),
                       const SizedBox(height: 25),
                       CustomButton(
@@ -98,11 +98,12 @@ class _LoginPageState extends State<LoginPage> {
                               _isloading = true;
                             });
                             try {
+                              loginEmail = localEmail!;
                               await loginUser(
-                                email: email!,
+                                email: localEmail!,
                                 password: password!,
                               );
-                              log(email as String);
+                              log(localEmail as String);
                               setState(() {
                                 _isloading = false;
                               });
@@ -115,12 +116,12 @@ class _LoginPageState extends State<LoginPage> {
                               );
 
                               Future.delayed(
-                                const Duration(seconds: 1),
+                                const Duration(milliseconds: 500),
                                 () {
                                   Navigator.pushNamed(
                                     context,
                                     ChatPage.id,
-                                    arguments: email!,
+                                    arguments: loginEmail!,
                                   );
                                 },
                               );
@@ -193,9 +194,6 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ],
                   ),
-                  // const Spacer(
-                  //   flex: 3,
-                  // ),
                   const SizedBox(height: 60),
                 ],
               ),

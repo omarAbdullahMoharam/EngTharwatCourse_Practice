@@ -12,11 +12,13 @@ class CustomTextFormField extends StatefulWidget {
     this.password,
     required this.onChanged,
     this.obsecure = false,
+    this.iconType = false,
   });
   final String? email;
   final String? password;
   final String hintText;
   final IconData suffixIcon;
+  final bool? iconType;
   bool? obsecure;
   Function(String userData) onChanged;
 
@@ -47,15 +49,20 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         labelStyle: const TextStyle(
           color: Colors.white,
         ),
-        suffixIcon: IconButton(
-          icon: Icon(widget.suffixIcon),
-          color: Colors.white,
-          onPressed: () {
-            setState(() {
-              widget.obsecure = !widget.obsecure!;
-            });
-          },
-        ),
+        suffixIcon: widget.iconType == true
+            ? IconButton(
+                icon: Icon(widget.suffixIcon),
+                color: Colors.white,
+                onPressed: () {
+                  setState(() {
+                    widget.obsecure = !widget.obsecure!;
+                  });
+                },
+              )
+            : Icon(
+                widget.suffixIcon,
+                color: Colors.white,
+              ),
         focusedBorder: const OutlineInputBorder(
           borderSide: BorderSide(color: Colors.blue),
         ),

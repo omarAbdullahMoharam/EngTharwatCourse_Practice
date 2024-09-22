@@ -31,7 +31,7 @@ class _RegisterPageState extends State<RegisterPage> {
   bool _isLoading = false;
 
   GlobalKey<FormState> formKey = GlobalKey();
-
+  String? localEmail;
   @override
   Widget build(BuildContext context) {
     return ModalProgressHUD(
@@ -46,9 +46,6 @@ class _RegisterPageState extends State<RegisterPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  // const Spacer(
-                  //   flex: 2,
-                  // ),
                   const SizedBox(height: 75),
                   const Image(
                     image: AssetImage('assets/images/scholar.png'),
@@ -63,9 +60,6 @@ class _RegisterPageState extends State<RegisterPage> {
                       color: Colors.white,
                     ),
                   ),
-                  // const Spacer(
-                  //   flex: 2,
-                  // ),
                   const SizedBox(height: 160),
                   const Row(
                     children: [
@@ -83,8 +77,10 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                   const SizedBox(height: 10),
                   CustomTextFormField(
-                    onChanged: (userData) =>
-                        email = userData.replaceAll(' ', ''),
+                    onChanged: (userData) {
+                      email = userData.replaceAll(' ', '');
+                      localEmail = email;
+                    },
                     hintText: 'Email',
                     suffixIcon: Icons.email,
                   ),
@@ -93,6 +89,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     onChanged: (userData) => password = userData,
                     hintText: 'Password',
                     suffixIcon: Icons.password,
+                    iconType: true,
                   ),
                   const SizedBox(height: 25),
                   CustomButton(
@@ -105,6 +102,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           // formKey.currentState!.save();
                           try {
                             await registerUser();
+
                             showSnackBar(
                               context: context,
                               textEXC: 'Account created successfully',
@@ -112,8 +110,16 @@ class _RegisterPageState extends State<RegisterPage> {
                               color: Colors.green,
                             );
 
-                            Future.delayed(const Duration(seconds: 1), () {
-                              Navigator.pushNamed(context, ChatPage.id);
+                            Future.delayed(const Duration(milliseconds: 500),
+                                () {
+                              Navigator.pushNamed(
+                                context,
+                                ChatPage.id,
+                                arguments: localEmail,
+                              );
+                              setState(() {
+                                _isLoading = false;
+                              });
                             });
                           } on FirebaseAuthException catch (e) {
                             if (e.code == 'weak-password') {
@@ -167,10 +173,12 @@ class _RegisterPageState extends State<RegisterPage> {
                           color: Colors.white,
                         ),
                       ),
-                      // const Spacer(),
                       TextButton(
                         onPressed: () {
                           Navigator.pop(context);
+                          setState(() {
+                            _isLoading = false;
+                          });
                         },
                         child: const Text(
                           'Login',
@@ -182,9 +190,6 @@ class _RegisterPageState extends State<RegisterPage> {
                       )
                     ],
                   ),
-                  // const Spacer(
-                  //   flex: 3,
-                  // ),
                   const SizedBox(height: 60),
                 ],
               ),
