@@ -12,7 +12,7 @@ class Api {
       return jsonDecode(response.body);
     } else {
       throw Exception(
-          "There was a problem in the status code ${response.statusCode}");
+          "There was a problem in the status code ${response.statusCode}\n with body ${jsonDecode(response.body)}");
     }
   }
 
@@ -34,7 +34,13 @@ class Api {
       body: body,
       headers: headers,
     );
-    Map<String, dynamic> productData = jsonDecode(response.body);
-    return productData;
+    if (response.statusCode == 200) {
+      Map<String, dynamic> productData = jsonDecode(response.body);
+      return productData;
+    } else {
+      throw Exception(
+        'There was a problem in the status code ${response.statusCode} \n with body ${jsonDecode(response.body)}',
+      );
+    }
   }
 }
