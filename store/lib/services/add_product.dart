@@ -22,3 +22,20 @@ class AddProductService {
     return ProductModel.fromJson(data);
   }
 }
+
+// 🚨🚨Example for post Request
+
+  // http.Response response = await http
+  //             .post(Uri.parse('https://fakestoreapi.com/products'), body: {
+  //           "title": "test",
+  //           "price": "12",
+  //           "description": "asd asdf asdf  ",
+  //           "image":
+  //               "https://th.bing.com/th/id/OIP.08o8Ip2gjslXVBT6zUFmJQHaFI?rs=1&pid=ImgDetMain",
+  //           "category": "electronics"
+  //         }, headers: {
+  //           'Accept': 'application/json',
+  //           'Content-Type': 'application/x-www-form-urlencoded'
+  //         });
+  //         log(jsonDecode(response.body).toString());
+        
