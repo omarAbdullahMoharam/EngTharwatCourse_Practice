@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../components/product_card.dart';
+import '../widgets/product_card.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -33,7 +33,20 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: const ProductCard(),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: GridView.builder(
+          clipBehavior: Clip.none,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              childAspectRatio: 0.7,
+              crossAxisCount: 2,
+              crossAxisSpacing: 4,
+              mainAxisSpacing: 5),
+          itemBuilder: (context, index) {
+            return const ProductCard();
+          },
+        ),
+      ),
     );
   }
 }
