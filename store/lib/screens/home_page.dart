@@ -38,10 +38,11 @@ class HomePage extends StatelessWidget {
         child: GridView.builder(
           clipBehavior: Clip.none,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              childAspectRatio: 0.7,
-              crossAxisCount: 2,
-              crossAxisSpacing: 4,
-              mainAxisSpacing: 5),
+            childAspectRatio: 0.7,
+            crossAxisCount: 2,
+            crossAxisSpacing: 4,
+            mainAxisSpacing: 5,
+          ),
           itemBuilder: (context, index) {
             return const ProductCard();
           },
