@@ -1,15 +1,17 @@
+import 'dart:developer';
+
 import 'package:store/helper/api.dart';
 import '../models/product_model.dart';
 
 class AllProductsService {
-  final ProductModel productModel;
-  AllProductsService({required this.productModel});
+  // AllProductsService();
 
   Future<List<ProductModel>> getAllProducts() async {
     //  Link of GET Request here🔻🔻🔍
     // http.Response response = await http.get(
     //   Uri.parse('https://fakestoreapi.com/products'),
     // );
+
     List<dynamic> data =
         await Api().get(url: 'https://fakestoreapi.com/products');
     //  decode || extraction of the data here 🔻
@@ -26,6 +28,7 @@ class AllProductsService {
         ),
       );
     }
+    log(produtsList.length.toString());
 
     return produtsList;
 

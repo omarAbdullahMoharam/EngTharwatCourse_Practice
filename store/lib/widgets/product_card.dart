@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:store/models/product_model.dart';
 
 class ProductCard extends StatefulWidget {
-  const ProductCard({
+  ProductCard({
+    required this.product,
     super.key,
   });
+  ProductModel product;
 
   @override
   State<ProductCard> createState() => _ProductCardState();
