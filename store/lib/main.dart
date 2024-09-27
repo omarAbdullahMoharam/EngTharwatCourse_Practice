@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:store/screens/home_page.dart';
 
+import 'widgets/no_products.dart';
+
 void main() {
   runApp(const StoreApp());
 }
