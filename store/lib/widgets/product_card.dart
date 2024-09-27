@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:store/models/product_model.dart';
 
+// ignore: must_be_immutable
 class ProductCard extends StatefulWidget {
   ProductCard({
     required this.product,
@@ -19,7 +20,7 @@ class _ProductCardState extends State<ProductCard> {
     return Stack(
       children: [
         Container(
-          // height: 280,
+          height: 280,
           // width: 250,
           decoration: BoxDecoration(
             boxShadow: [
@@ -38,16 +39,19 @@ class _ProductCardState extends State<ProductCard> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 ListTile(
-                  title: const Text(
-                    'imageTitle',
-                    style: TextStyle(fontSize: 18, color: Colors.grey),
+                  title: Text(
+                    widget.product.title.substring(0, 6),
+                    style: const TextStyle(
+                      fontSize: 18,
+                      color: Colors.grey,
+                    ),
                   ),
                   subtitle: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Text(
-                        r'$222',
-                        style: TextStyle(
+                      Text(
+                        '\$${widget.product.price}',
+                        style: const TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
                         ),
@@ -74,15 +78,15 @@ class _ProductCardState extends State<ProductCard> {
         Positioned(
           right: 5,
           left: 5,
-          // top: 20,
+          top: 20,
           bottom: 100,
           child: Padding(
             padding: const EdgeInsets.all(6.0),
             child: Image.network(
-              fit: BoxFit.cover,
-              'https://m.media-amazon.com/images/I/61AXuC9Ac5L.__AC_SX300_SY300_QL70_ML2_.jpg',
-              // width: 200,
-              // height: 170,
+              fit: BoxFit.scaleDown,
+              widget.product.image,
+              width: 200,
+              height: 190,
             ),
           ),
         ),

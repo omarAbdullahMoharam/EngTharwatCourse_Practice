@@ -14,8 +14,10 @@ class StoreApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         HomePage.homeID: (context) => const HomePage(),
+        NoProducts.noProductID: (context) => const NoProducts()
       },
       initialRoute: HomePage.homeID,
     );
+    //
   }
 }
