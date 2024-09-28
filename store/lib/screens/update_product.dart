@@ -140,13 +140,4 @@ class _UpdateProductState extends State<UpdateProduct> {
       category: product.category,
     );
   }
-  //   Future<void> updateProduct(ProductModel product) async {
-  //   await UpdateProductService().updateProduct(
-  //       id: product.id,
-  //       title: productName == null ? product.title : productName!,
-  //       price: price == null ? product.price.toString() : price!,
-  //       desc: desc == null ? product.description : desc!,
-  //       image: image == null ? product.image : image!,
-  //       category: product.category);
-  // }
 }
