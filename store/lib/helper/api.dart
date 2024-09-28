@@ -78,7 +78,7 @@ class Api {
       );
     }
 
-    http.Response response = await http.post(
+    http.Response response = await http.put(
       Uri.parse(url),
       body: body,
       headers: headers,

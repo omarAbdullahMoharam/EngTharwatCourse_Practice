@@ -98,11 +98,11 @@ class _UpdateProductState extends State<UpdateProduct> {
                 onPressed: () async {
                   isLoading = true;
                   setState(() {});
+                  await update(product);
 
                   try {
-                    await update(product);
-                    log(price.toString());
                     showSnackBar(
+                      // ignore: use_build_context_synchronously
                       context: context,
                       textEXC: 'Success',
                       icon: Icons.check_circle,
@@ -111,6 +111,7 @@ class _UpdateProductState extends State<UpdateProduct> {
                     log('Success');
                   } catch (e) {
                     showSnackBar(
+                        // ignore: use_build_context_synchronously
                         context: context,
                         textEXC: 'Failed,An Error Happend',
                         icon: Icons.error,
