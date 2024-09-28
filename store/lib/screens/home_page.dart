@@ -1,4 +1,4 @@
-import 'dart:math';
+import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:store/models/product_model.dart';
@@ -49,13 +49,14 @@ class HomePage extends StatelessWidget {
                 color: Colors.amber[900],
               ));
             } else if (snapshot.hasError) {
+              log("${snapshot.error}");
               return Center(
                 child: Text('Error: ${snapshot.error}❗😡'),
               );
             } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
               return const NoProducts();
             } else {
-              log(snapshot.data!.length);
+              log(snapshot.data!.length.toString());
               return GridView.builder(
                 itemCount: snapshot.data!.length,
                 clipBehavior: Clip.none,

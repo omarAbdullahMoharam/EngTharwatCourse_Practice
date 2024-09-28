@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -17,10 +18,13 @@ class Api {
       Uri.parse(url),
       headers: headers,
     );
+    // log('URL= $url \n BODY= $body \n TOKEN= $token');
+
     if (response.statusCode == 200) {
       // log(response.body.toString());
-
-      return jsonDecode(response.body);
+      List<dynamic> productData = jsonDecode(response.body);
+      return productData;
+      // return jsonDecode(response.body);
     } else {
       throw Exception(
         "There was a problem in the status code ${response.statusCode}\n with body ${jsonDecode(response.body)}",
@@ -44,8 +48,12 @@ class Api {
       body: body,
       headers: headers,
     );
+    log('URL= $url \n BODY= $body \n TOKEN= $token');
+
     if (response.statusCode == 200) {
       Map<String, dynamic> productData = jsonDecode(response.body);
+      log('productData  $productData');
+
       return productData;
     } else {
       throw Exception(
@@ -75,8 +83,10 @@ class Api {
       body: body,
       headers: headers,
     );
+    log('URL= $url \n BODY= $body \n TOKEN= $token');
     if (response.statusCode == 200) {
       Map<String, dynamic> productData = jsonDecode(response.body);
+      log('productData  $productData');
       return productData;
     } else {
       throw Exception(
