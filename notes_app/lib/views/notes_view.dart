@@ -88,20 +88,23 @@ class AddNote extends StatelessWidget {
             style: const TextStyle(color: Colors.white),
           ),
           const Spacer(),
-          MaterialButton(
-            padding: const EdgeInsets.symmetric(vertical: 15),
-            onPressed: () {},
-            minWidth: double.infinity,
-            color: Colors.teal,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8),
-            ),
-            splashColor: Colors.tealAccent.shade700,
-            child: const Text(
-              'Add',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 18,
+          Padding(
+            padding: const EdgeInsets.only(bottom: 8.0),
+            child: MaterialButton(
+              padding: const EdgeInsets.symmetric(vertical: 15),
+              onPressed: () {},
+              minWidth: double.infinity,
+              color: Colors.teal,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+              ),
+              splashColor: Colors.tealAccent.shade700,
+              child: const Text(
+                'Add',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 18,
+                ),
               ),
             ),
           )
