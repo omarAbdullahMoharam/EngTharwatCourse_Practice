@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'custom_appbar.dart';
 import 'custom_note_card.dart';
+import 'notes_custom_scrollview.dart';
 
 class NotesViewBody extends StatelessWidget {
   const NotesViewBody({
@@ -19,16 +20,9 @@ class NotesViewBody extends StatelessWidget {
           ),
           CustomAppbar(),
           Expanded(
-            child: SingleChildScrollView(
-              scrollDirection: Axis.vertical,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  CustomNoteCard(),
-                ],
-              ),
-            ),
-          )
+            // or using listView.builder ❗🔍
+            child: NotesScrollView(),
+          ),
         ],
       ),
     );

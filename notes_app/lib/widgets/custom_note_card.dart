@@ -12,7 +12,9 @@ class CustomNoteCard extends StatelessWidget {
         SizedBox(
           width: double.infinity,
           child: Card(
-            margin: const EdgeInsets.only(top: 24, bottom: 24),
+            margin: const EdgeInsets.symmetric(
+              vertical: 8,
+            ),
             color: const Color(0xFFFFCD7A),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -20,7 +22,7 @@ class CustomNoteCard extends StatelessWidget {
                 ListTile(
                   titleAlignment: ListTileTitleAlignment.top,
                   title: const Padding(
-                    padding: EdgeInsets.only(top: 8.0),
+                    padding: EdgeInsets.only(top: 0.0),
                     child: Text(
                       'Flutter Tips',
                       style: TextStyle(color: Colors.black, fontSize: 30),
