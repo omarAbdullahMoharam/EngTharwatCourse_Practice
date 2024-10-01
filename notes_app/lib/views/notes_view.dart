@@ -66,13 +66,14 @@ class AddNote extends StatelessWidget {
           TextField(
             decoration: InputDecoration(
               contentPadding:
-                  const EdgeInsets.symmetric(vertical: 60, horizontal: 8),
+                  const EdgeInsets.symmetric(vertical: 60, horizontal: 12),
               filled: true,
               fillColor: Colors.grey[900],
               hintText: 'Content',
               hintStyle: const TextStyle(color: Colors.teal),
-              enabledBorder: const OutlineInputBorder(
-                borderSide: BorderSide(
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+                borderSide: const BorderSide(
                   color: Colors.white,
                   width: 1.0,
                 ),
