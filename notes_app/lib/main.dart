@@ -15,7 +15,10 @@ class NotesApp extends StatelessWidget {
         NotesView.notesID: (context) => const NotesView(),
       },
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark(),
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        fontFamily: 'Poppins',
+      ),
       initialRoute: NotesView.notesID,
     );
   }
