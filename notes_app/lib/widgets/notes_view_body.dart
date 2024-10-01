@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'custom_appbar.dart';
-import 'custom_note_card.dart';
 import 'notes_custom_scrollview.dart';
 
 class NotesViewBody extends StatelessWidget {

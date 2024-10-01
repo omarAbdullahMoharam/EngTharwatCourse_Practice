@@ -21,12 +21,9 @@ class CustomNoteCard extends StatelessWidget {
               children: [
                 ListTile(
                   titleAlignment: ListTileTitleAlignment.top,
-                  title: const Padding(
-                    padding: EdgeInsets.only(top: 0.0),
-                    child: Text(
-                      'Flutter Tips',
-                      style: TextStyle(color: Colors.black, fontSize: 30),
-                    ),
+                  title: const Text(
+                    'Flutter Tips',
+                    style: TextStyle(color: Colors.black, fontSize: 30),
                   ),
                   subtitle: Padding(
                     padding: const EdgeInsets.only(top: 20.0, bottom: 8),
