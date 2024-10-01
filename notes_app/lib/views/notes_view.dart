@@ -11,10 +11,26 @@ class NotesView extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         shape: const CircleBorder(),
         backgroundColor: Colors.teal,
-        onPressed: () {},
-        child: const Icon(Icons.add),
+        onPressed: () {
+          showModalBottomSheet(
+            context: context,
+            builder: (context) => Container(),
+          );
+        },
+        child: const Icon(
+          Icons.add,
+          color: Colors.black,
+        ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
+  }
+}
+
+class AddNote extends StatelessWidget {
+  const AddNote({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }

@@ -8,15 +8,18 @@ class NotesScrollView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: [
-        SliverList(
-          delegate: SliverChildBuilderDelegate(
-            // childCount: ,
-            (context, index) => const CustomNoteCard(),
-          ),
-        )
-      ],
+    return Padding(
+      padding: const EdgeInsets.only(top: 8.0),
+      child: CustomScrollView(
+        slivers: [
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              // childCount: ,
+              (context, index) => const CustomNoteCard(),
+            ),
+          )
+        ],
+      ),
     );
   }
 }
