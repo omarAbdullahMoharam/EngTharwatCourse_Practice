@@ -6,7 +6,7 @@ class CustomTextField extends StatelessWidget {
   const CustomTextField({
     super.key,
     required this.hintText,
-    required this.maxLines,
+    this.maxLines = 1,
   });
 
   final String hintText;
