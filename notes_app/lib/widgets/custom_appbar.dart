@@ -18,10 +18,6 @@ class CustomAppbar extends StatelessWidget {
         ),
         const Spacer(),
         const CustomSearchIcon(),
-        // const Padding(
-        //   padding: EdgeInsets.only(top: 8, right: 8.0),
-        //   child:
-        // )
       ],
     );
   }

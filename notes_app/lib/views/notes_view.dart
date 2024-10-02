@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'addnote_view.dart';
 import '../widgets/notes_view_body.dart';
 
 class NotesView extends StatelessWidget {
@@ -13,6 +14,7 @@ class NotesView extends StatelessWidget {
         backgroundColor: Colors.teal,
         onPressed: () {
           showModalBottomSheet(
+            isScrollControlled: true,
             context: context,
             builder: (context) => const AddNote(),
           );
@@ -21,94 +23,6 @@ class NotesView extends StatelessWidget {
           Icons.add,
           color: Colors.black,
         ),
-      ),
-    );
-  }
-}
-
-class AddNote extends StatelessWidget {
-  const AddNote({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8),
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 12, bottom: 18),
-            child: TextField(
-              enabled: true,
-              decoration: InputDecoration(
-                hintText: 'Title',
-                hintStyle: const TextStyle(
-                  color: Colors.teal,
-                  fontSize: 18,
-                ),
-                alignLabelWithHint: true,
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  borderSide: const BorderSide(
-                    color: Colors.white,
-                    width: 1,
-                  ),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  borderSide: const BorderSide(
-                    color: Colors.white,
-                    width: 2,
-                  ),
-                ),
-              ),
-            ),
-          ),
-          TextField(
-            decoration: InputDecoration(
-              contentPadding:
-                  const EdgeInsets.symmetric(vertical: 60, horizontal: 12),
-              filled: true,
-              fillColor: Colors.grey[900],
-              hintText: 'Content',
-              hintStyle: const TextStyle(color: Colors.teal),
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10),
-                borderSide: const BorderSide(
-                  color: Colors.white,
-                  width: 1.0,
-                ),
-              ),
-              focusedBorder: const OutlineInputBorder(
-                borderSide: BorderSide(
-                  color: Colors.white,
-                  width: 2.0,
-                ),
-              ),
-            ),
-            style: const TextStyle(color: Colors.white),
-          ),
-          const Spacer(),
-          Padding(
-            padding: const EdgeInsets.only(bottom: 8.0),
-            child: MaterialButton(
-              padding: const EdgeInsets.symmetric(vertical: 15),
-              onPressed: () {},
-              minWidth: double.infinity,
-              color: Colors.teal,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8),
-              ),
-              splashColor: Colors.tealAccent.shade700,
-              child: const Text(
-                'Add',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 18,
-                ),
-              ),
-            ),
-          )
-        ],
       ),
     );
   }
