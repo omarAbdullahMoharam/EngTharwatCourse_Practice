@@ -5,13 +5,15 @@ import '../constants.dart';
 class CustomButton extends StatelessWidget {
   const CustomButton({
     super.key,
+    this.onPressed,
   });
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
       padding: const EdgeInsets.symmetric(vertical: 15),
-      onPressed: () {},
+      onPressed: onPressed,
       minWidth: MediaQuery.of(context).size.width,
       color: Colors.teal,
       shape: RoundedRectangleBorder(
