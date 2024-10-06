@@ -4,6 +4,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:notes_app/constants.dart';
 import 'package:notes_app/cubits/add_note/add_note_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
+import 'package:notes_app/simple_bloc_observer.dart';
 import 'package:notes_app/views/edit_note_view.dart';
 import 'package:notes_app/views/notes_view.dart';
 
@@ -18,6 +19,8 @@ void main() async {
   // 🔻🔻🔻🔻 by passing the GENERATED TypeAdapter BY BUILD_RUNNER which Takes
   // a NoteModel
   Hive.registerAdapter(NoteModelAdapter());
+  // To understand the background proccess of States which is triggered
+  Bloc.observer = SimpleBlocObserver();
   runApp(const NotesApp());
 }
 
