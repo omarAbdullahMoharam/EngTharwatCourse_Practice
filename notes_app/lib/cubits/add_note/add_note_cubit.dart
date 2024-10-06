@@ -15,14 +15,10 @@ class AddNoteCubit extends Cubit<AddNoteState> {
     emit(AddNoteLoading());
     try {
       var notesBox = Hive.box<NoteModel>(kNotesBox);
-      emit(
-        AddNoteSuccess('Note Added😊'),
-      );
       await notesBox.add(note);
+      emit(AddNoteSuccess('Note Added😊'));
     } catch (error) {
-      emit(
-        AddNoteFailure(error.toString()),
-      );
+      emit(AddNoteFailure(error.toString()));
       log('${error}from add Note method');
     }
   }
