@@ -43,7 +43,7 @@ class AddNote extends StatelessWidget {
               icon: Icons.check_circle,
               color: Colors.green,
             );
-            // Navigator.pop(context);
+            Navigator.pop(context);
           }
         },
         builder: (context, state) {
