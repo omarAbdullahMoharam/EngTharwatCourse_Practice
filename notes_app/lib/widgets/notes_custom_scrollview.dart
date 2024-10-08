@@ -23,6 +23,12 @@ class NotesScrollView extends StatelessWidget {
             slivers: [
               SliverList(
                 delegate: SliverChildBuilderDelegate(
+                  // you can handle it here by checking
+                  //BlockProvider(context,state){
+                  //childCount: state is NoteSuccess ? state.notes.length:0
+                  //............
+                  //}
+
                   childCount: myNotes.length,
                   (context, index) {
                     return CustomNoteCard(noteModel: myNotes[index]);
