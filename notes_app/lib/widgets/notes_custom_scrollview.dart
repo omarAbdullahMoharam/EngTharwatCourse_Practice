@@ -4,6 +4,8 @@ import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/widgets/custom_note_card.dart';
 
+import 'custom_empty_note_view.dart';
+
 class NotesScrollView extends StatelessWidget {
   const NotesScrollView({
     super.key,
@@ -39,41 +41,6 @@ class NotesScrollView extends StatelessWidget {
           ),
         );
       },
-    );
-  }
-}
-
-class EmptyNotesView extends StatelessWidget {
-  const EmptyNotesView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        SizedBox(
-          height: 300,
-        ),
-        SizedBox(
-          height: 200,
-          width: double.infinity,
-          child: Column(
-            children: [
-              Icon(
-                Icons.delete,
-                color: Colors.red,
-                size: 60,
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Text(
-                'No Notes Found! 😱\n   Add New Note 🔻',
-                style: TextStyle(color: Colors.white, fontSize: 25),
-              )
-            ],
-          ),
-        )
-      ],
     );
   }
 }

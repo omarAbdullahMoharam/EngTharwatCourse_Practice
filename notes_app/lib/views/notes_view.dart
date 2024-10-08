@@ -23,9 +23,12 @@ class NotesView extends StatelessWidget {
               builder: (context) => const AddNote(),
             );
           },
-          child: const Icon(
-            Icons.add,
-            color: Colors.black,
+          child: const Center(
+            child: Icon(
+              Icons.note_add_outlined,
+              color: Colors.black,
+              size: 35,
+            ),
           ),
         ),
       ),
