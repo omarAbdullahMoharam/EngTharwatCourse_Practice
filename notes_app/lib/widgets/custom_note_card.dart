@@ -18,7 +18,7 @@ class CustomNoteCard extends StatelessWidget {
               margin: const EdgeInsets.symmetric(
                 vertical: 8,
               ),
-              color: const Color(0xFFFFCD7A),
+              color: Color(noteModel.color),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
