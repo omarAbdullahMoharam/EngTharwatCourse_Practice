@@ -1,6 +1,9 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/views/edit_note_view.dart';
+import 'package:notes_app/widgets/custom_snackbar.dart';
 
 class CustomNoteCard extends StatelessWidget {
   const CustomNoteCard({super.key, required this.noteModel});
@@ -59,7 +62,15 @@ class CustomNoteCard extends StatelessWidget {
             top: 40,
             right: 5,
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                noteModel.delete();
+                showSnackBar(
+                    context: context,
+                    message: 'Note Deleted',
+                    icon: Icons.delete,
+                    color: Colors.red);
+                log('Note Deleted :\ntitle: ${noteModel.title} \nSubTitle: ${noteModel.subTitle}');
+              },
               icon: const Icon(
                 Icons.delete,
                 size: 34,

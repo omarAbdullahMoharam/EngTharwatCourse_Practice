@@ -19,7 +19,7 @@ void showSnackBar({
         ],
       ),
       backgroundColor: Colors.black,
-      duration: const Duration(milliseconds: 9000),
+      duration: const Duration(milliseconds: 3000),
     ),
   );
 }
