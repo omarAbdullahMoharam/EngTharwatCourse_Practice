@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/widgets/custom_snackbar.dart';
 import '../cubits/add_note/add_note_cubit.dart';
 import '../widgets/custom_note_form.dart';
@@ -43,6 +44,7 @@ class AddNote extends StatelessWidget {
               icon: Icons.check_circle,
               color: Colors.green,
             );
+            BlocProvider.of<NotesCubit>(context).fetchAllNotes();
             Navigator.pop(context);
           }
         },

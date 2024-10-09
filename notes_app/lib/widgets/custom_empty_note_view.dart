@@ -6,9 +6,10 @@ class EmptyNotesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
         SizedBox(
-          height: 300,
+          height: 271,
         ),
         SizedBox(
           height: 200,

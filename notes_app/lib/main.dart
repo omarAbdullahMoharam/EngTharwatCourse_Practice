@@ -7,6 +7,8 @@ import 'package:notes_app/simple_bloc_observer.dart';
 import 'package:notes_app/views/edit_note_view.dart';
 import 'package:notes_app/views/notes_view.dart';
 
+import 'cubits/notes_cubit/notes_cubit.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // initialized Hive Package
@@ -32,17 +34,20 @@ class NotesApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      routes: {
-        NotesView.notesID: (context) => const NotesView(),
-        EditNoteView.editNoteID: (context) => const EditNoteView(),
-      },
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        brightness: Brightness.dark,
-        fontFamily: 'Poppins',
+    return BlocProvider(
+      create: (context) => NotesCubit(),
+      child: MaterialApp(
+        routes: {
+          NotesView.notesID: (context) => const NotesView(),
+          EditNoteView.editNoteID: (context) => const EditNoteView(),
+        },
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          brightness: Brightness.dark,
+          fontFamily: 'Poppins',
+        ),
+        initialRoute: NotesView.notesID,
       ),
-      initialRoute: NotesView.notesID,
     );
   }
 }

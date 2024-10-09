@@ -1,9 +1,12 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/views/edit_note_view.dart';
 import 'package:notes_app/widgets/custom_snackbar.dart';
+
+import '../cubits/notes_cubit/notes_cubit.dart';
 
 class CustomNoteCard extends StatelessWidget {
   const CustomNoteCard({super.key, required this.noteModel});
@@ -65,10 +68,12 @@ class CustomNoteCard extends StatelessWidget {
               onPressed: () {
                 noteModel.delete();
                 showSnackBar(
-                    context: context,
-                    message: 'Note Deleted',
-                    icon: Icons.delete,
-                    color: Colors.red);
+                  context: context,
+                  message: 'Note Deleted',
+                  icon: Icons.delete,
+                  color: Colors.red,
+                );
+                BlocProvider.of<NotesCubit>(context).fetchAllNotes();
                 log('Note Deleted :\ntitle: ${noteModel.title} \nSubTitle: ${noteModel.subTitle}');
               },
               icon: const Icon(
