@@ -3,19 +3,24 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/models/note_model.dart';
-import 'package:notes_app/views/edit_note_view.dart';
 import 'package:notes_app/widgets/custom_snackbar.dart';
+import 'package:notes_app/widgets/edit_view_body.dart';
 
 import '../cubits/notes_cubit/notes_cubit.dart';
 
 class CustomNoteCard extends StatelessWidget {
-  const CustomNoteCard({super.key, required this.noteModel});
-  final NoteModel noteModel;
+  const CustomNoteCard({super.key, required this.note});
+  final NoteModel note;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Navigator.pushNamed(context, EditNoteView.editNoteID),
+      onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => EditViewBody(note: note),
+        ),
+      ),
       child: Stack(
         children: [
           SizedBox(
@@ -24,20 +29,20 @@ class CustomNoteCard extends StatelessWidget {
               margin: const EdgeInsets.symmetric(
                 vertical: 8,
               ),
-              color: Color(noteModel.color),
+              color: Color(note.color),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   ListTile(
                     titleAlignment: ListTileTitleAlignment.top,
                     title: Text(
-                      noteModel.title,
+                      note.title,
                       style: const TextStyle(color: Colors.black, fontSize: 30),
                     ),
                     subtitle: Padding(
                       padding: const EdgeInsets.only(top: 20.0, bottom: 8),
                       child: Text(
-                        noteModel.subTitle,
+                        note.subTitle,
                         style: TextStyle(
                           color: Colors.black.withOpacity(0.6),
                           fontSize: 22,
@@ -51,7 +56,7 @@ class CustomNoteCard extends StatelessWidget {
                     padding:
                         const EdgeInsets.only(bottom: 24, right: 23.0, top: 8),
                     child: Text(
-                      noteModel.date,
+                      note.date,
                       style: TextStyle(
                         color: Colors.black.withOpacity(0.6),
                       ),
@@ -66,7 +71,7 @@ class CustomNoteCard extends StatelessWidget {
             right: 5,
             child: IconButton(
               onPressed: () {
-                noteModel.delete();
+                note.delete();
                 showSnackBar(
                   context: context,
                   message: 'Note Deleted',
@@ -74,7 +79,7 @@ class CustomNoteCard extends StatelessWidget {
                   color: Colors.red,
                 );
                 BlocProvider.of<NotesCubit>(context).fetchAllNotes();
-                log('Note Deleted :\ntitle: ${noteModel.title} \nSubTitle: ${noteModel.subTitle}');
+                log('Note Deleted :\ntitle: ${note.title} \nSubTitle: ${note.subTitle}');
               },
               icon: const Icon(
                 Icons.delete,

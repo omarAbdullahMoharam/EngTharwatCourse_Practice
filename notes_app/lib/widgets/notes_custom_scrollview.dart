@@ -33,7 +33,7 @@ class NotesScrollView extends StatelessWidget {
 
                   childCount: myNotes.length,
                   (context, index) {
-                    return CustomNoteCard(noteModel: myNotes[index]);
+                    return CustomNoteCard(note: myNotes[index]);
                   },
                 ),
               )
