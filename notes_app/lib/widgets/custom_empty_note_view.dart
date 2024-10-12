@@ -9,21 +9,13 @@ class EmptyNotesView extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       mainAxisSize: MainAxisSize.min,
       children: [
-        Image.asset('assets/images/NoNotesFound.png'),
-        const SizedBox(
-          height: 200,
-          width: double.infinity,
-          child: Column(
-            children: [
-              SizedBox(
-                height: 10,
-              ),
-              Text(
-                'No Notes Found! 😱\n   Add New Note 🔻',
-                style: TextStyle(color: Colors.white, fontSize: 25),
-              )
-            ],
-          ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Image.asset('assets/images/NoNotesFound.png'),
+        ),
+        const Text(
+          'No Notes Found! 😱\n   Add New Note 🔻',
+          style: TextStyle(color: Colors.white, fontSize: 25),
         ),
       ],
     );
