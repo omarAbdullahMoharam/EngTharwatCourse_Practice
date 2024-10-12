@@ -15,7 +15,10 @@ class EmptyNotesView extends StatelessWidget {
         ),
         const Text(
           'No Notes Found! 😱\n   Add New Note 🔻',
-          style: TextStyle(color: Colors.white, fontSize: 25),
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 25,
+          ),
         ),
       ],
     );
