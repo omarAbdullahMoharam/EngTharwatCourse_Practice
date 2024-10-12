@@ -7,6 +7,7 @@ import 'package:notes_app/cubits/add_note/add_note_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
 
 import 'custom_button.dart';
+import 'custom_listview_colors.dart';
 import 'custom_textformfield.dart';
 
 class AddNoteForm extends StatefulWidget {
@@ -79,54 +80,6 @@ class _NoteFormState extends State<AddNoteForm> {
             ),
           )
         ],
-      ),
-    );
-  }
-}
-
-final List<Color> colorPallet = [
-  Colors.lightBlue,
-  Colors.teal,
-  Colors.purpleAccent,
-  Colors.indigoAccent,
-  const Color(0xFF64DD17),
-  Colors.deepOrange,
-  Colors.deepPurple,
-  Colors.yellow,
-  Colors.lightGreen,
-];
-
-class CustomNoteColor extends StatelessWidget {
-  const CustomNoteColor({super.key, required this.colorIndex});
-  final int colorIndex;
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 4),
-      child: GestureDetector(
-        onTap: () {},
-        child: CircleAvatar(
-          radius: 42,
-          backgroundColor: colorPallet[colorIndex],
-        ),
-      ),
-    );
-  }
-}
-
-class ScrollableColorsPallet extends StatelessWidget {
-  const ScrollableColorsPallet({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 120,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: colorPallet.length,
-        itemBuilder: (context, index) {
-          return CustomNoteColor(colorIndex: index);
-        },
       ),
     );
   }
