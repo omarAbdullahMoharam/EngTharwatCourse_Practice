@@ -20,7 +20,7 @@ class _ScrollableColorsPalletState extends State<ScrollableColorsPallet> {
       height: 140,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: colorPallet.length,
+        itemCount: kColorPallet.length,
         itemBuilder: (context, index) {
           return CustomNoteColor(
               colorIndex: index,
@@ -30,7 +30,7 @@ class _ScrollableColorsPalletState extends State<ScrollableColorsPallet> {
                   () {
                     currentIndex = index;
                     BlocProvider.of<AddNoteCubit>(context).color =
-                        colorPallet[currentIndex];
+                        kColorPallet[currentIndex];
                   },
                 );
               });

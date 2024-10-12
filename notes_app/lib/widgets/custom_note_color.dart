@@ -26,7 +26,7 @@ class _CustomNoteColorState extends State<CustomNoteColor> {
         child: widget.isSelected
             ? CircleAvatar(
                 radius: 42,
-                backgroundColor: colorPallet[widget.colorIndex],
+                backgroundColor: kColorPallet[widget.colorIndex],
                 child: const Center(
                   child: Icon(
                     Icons.check,
@@ -37,7 +37,7 @@ class _CustomNoteColorState extends State<CustomNoteColor> {
               )
             : CircleAvatar(
                 radius: 42,
-                backgroundColor: colorPallet[widget.colorIndex],
+                backgroundColor: kColorPallet[widget.colorIndex],
               ),
       ),
     );
