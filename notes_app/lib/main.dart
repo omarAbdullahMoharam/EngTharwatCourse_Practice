@@ -37,7 +37,7 @@ class NotesApp extends StatelessWidget {
       child: MaterialApp(
         routes: {
           NotesView.notesID: (context) => const NotesView(),
-          // replaced To Handle the Navigation Corredctly
+          // replaced To Handle the Navigation Corredctly🔻
           // EditNoteView.editNoteID: (context) =>  EditNoteView(note:,),
         },
         debugShowCheckedModeBanner: false,
