@@ -6,6 +6,8 @@ import 'package:notes_app/widgets/custom_appbar.dart';
 import 'package:notes_app/widgets/custom_snackbar.dart';
 import 'package:notes_app/widgets/custom_textformfield.dart';
 
+import 'custom_edit_listveiew_color.dart';
+
 class EditViewBody extends StatefulWidget {
   const EditViewBody({super.key, required this.note});
   final NoteModel note;
@@ -64,6 +66,9 @@ class _EditViewBodyState extends State<EditViewBody> {
               },
               hintText: widget.note.subTitle,
               maxLines: 5,
+            ),
+            ScrollableEditColorsPallet(
+              passedNote: widget.note,
             )
           ],
         ),
