@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notes_app/cubits/add_note/add_note_cubit.dart';
 
 import '../helpers/constants.dart';
 import 'custom_note_color.dart';
@@ -11,7 +13,7 @@ class ScrollableColorsPallet extends StatefulWidget {
 }
 
 class _ScrollableColorsPalletState extends State<ScrollableColorsPallet> {
-  int? currentIndex = 0;
+  int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -27,6 +29,8 @@ class _ScrollableColorsPalletState extends State<ScrollableColorsPallet> {
                 setState(
                   () {
                     currentIndex = index;
+                    BlocProvider.of<AddNoteCubit>(context).color =
+                        colorPallet[currentIndex];
                   },
                 );
               });

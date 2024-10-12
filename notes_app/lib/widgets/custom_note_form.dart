@@ -65,7 +65,8 @@ class _NoteFormState extends State<AddNoteForm> {
                         title: title!,
                         subTitle: subTitle!,
                         date: formattedDate,
-                        color: Colors.indigo[300]!.value,
+                        color:
+                            BlocProvider.of<AddNoteCubit>(context).color.value,
                       );
                       BlocProvider.of<AddNoteCubit>(context).addNote(note);
                       log('note add button working');
