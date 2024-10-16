@@ -11,53 +11,53 @@ class NumbersPage extends StatelessWidget {
   List<ItemModel> numbers = const [
     ItemModel(
         image: 'assets/images/numbers/one.png',
-        JabTitle: 'ichi',
-        EngTitle: 'One',
+        jabTitle: 'ichi',
+        engTitle: 'One',
         soundPath: 'sounds/numbers/one_sound.mp3'),
     ItemModel(
         image: 'assets/images/numbers/two.png',
-        JabTitle: 'Ni',
-        EngTitle: 'Two',
+        jabTitle: 'Ni',
+        engTitle: 'Two',
         soundPath: 'sounds/numbers/two_sound.mp3'),
     ItemModel(
         image: 'assets/images/numbers/three.png',
-        JabTitle: 'San',
-        EngTitle: 'Three',
+        jabTitle: 'San',
+        engTitle: 'Three',
         soundPath: 'sounds/numbers/three_sound.mp3'),
     ItemModel(
         image: 'assets/images/numbers/four.png',
-        JabTitle: 'Shi',
-        EngTitle: 'Four',
+        jabTitle: 'Shi',
+        engTitle: 'Four',
         soundPath: 'sounds/numbers/four_sound.mp3'),
     ItemModel(
         image: 'assets/images/numbers/five.png',
-        JabTitle: 'Go',
-        EngTitle: 'Five',
+        jabTitle: 'Go',
+        engTitle: 'Five',
         soundPath: 'sounds/numbers/five_sound.mp3'),
     ItemModel(
         image: 'assets/images/numbers/six.png',
-        JabTitle: 'Roku',
-        EngTitle: 'Six',
+        jabTitle: 'Roku',
+        engTitle: 'Six',
         soundPath: 'sounds/numbers/six_sound.mp3'),
     ItemModel(
         image: 'assets/images/numbers/seven.png',
-        JabTitle: 'Sebun',
-        EngTitle: 'Seven',
+        jabTitle: 'Sebun',
+        engTitle: 'Seven',
         soundPath: 'sounds/numbers/seven_sound.mp3'),
     ItemModel(
         image: 'assets/images/numbers/eight.png',
-        JabTitle: 'hachi',
-        EngTitle: 'Eight',
+        jabTitle: 'hachi',
+        engTitle: 'Eight',
         soundPath: 'sounds/numbers/eight_sound.mp3'),
     ItemModel(
         image: 'assets/images/numbers/nine.png',
-        JabTitle: 'Kyū',
-        EngTitle: 'Nine',
+        jabTitle: 'Kyū',
+        engTitle: 'Nine',
         soundPath: 'sounds/numbers/nine_sound.mp3'),
     ItemModel(
       image: 'assets/images/numbers/ten.png',
-      JabTitle: 'Jū',
-      EngTitle: 'Ten',
+      jabTitle: 'Jū',
+      engTitle: 'Ten',
       soundPath: 'sounds/numbers/ten_sound.mp3',
     )
   ];

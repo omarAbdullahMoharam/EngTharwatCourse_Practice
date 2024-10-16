@@ -1,13 +1,13 @@
 class ItemModel {
-  final String JabTitle;
-  final String EngTitle;
+  final String jabTitle;
+  final String engTitle;
   final String? image;
   final String soundPath;
 
   const ItemModel({
     this.image,
-    required this.JabTitle,
-    required this.EngTitle,
+    required this.jabTitle,
+    required this.engTitle,
     required this.soundPath,
   });
 }

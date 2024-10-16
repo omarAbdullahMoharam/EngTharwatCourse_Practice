@@ -1,5 +1,4 @@
 // ignore: unused_import
-import 'package:business_card_app/SimpleUiStyle.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

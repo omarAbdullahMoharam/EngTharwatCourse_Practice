@@ -1,11 +1,11 @@
 class Family {
-  final String JabRole;
-  final String EngRole;
+  final String jabRole;
+  final String engRole;
   final String image;
   final String soundPath;
   const Family(
-      {required this.JabRole,
-      required this.EngRole,
+      {required this.jabRole,
+      required this.engRole,
       required this.image,
       required this.soundPath});
 }

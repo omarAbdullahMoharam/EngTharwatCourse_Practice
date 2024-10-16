@@ -26,17 +26,14 @@ class PhrasesItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                statement.JabTitle,
+                statement.jabTitle,
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 17,
                 ),
               ),
-              // const SizedBox(
-              //     // height: 5,
-              //     ),
               Text(
-                statement.EngTitle,
+                statement.engTitle,
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 19,

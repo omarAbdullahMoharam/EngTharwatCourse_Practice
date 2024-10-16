@@ -24,11 +24,11 @@ class ItemInfo extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  itemModel.JabTitle,
+                  itemModel.jabTitle,
                   style: const TextStyle(color: Colors.white, fontSize: 16),
                 ),
                 Text(
-                  itemModel.EngTitle,
+                  itemModel.engTitle,
                   style: const TextStyle(color: Colors.white, fontSize: 17),
                 ),
               ],

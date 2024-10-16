@@ -10,7 +10,7 @@ class CustomItemComponent extends StatelessWidget {
   final player = AudioPlayer();
   final Color color;
 
-  // String JabTitle;
+  // String jabTitle;
   // String english;
   // String image;
   @override
