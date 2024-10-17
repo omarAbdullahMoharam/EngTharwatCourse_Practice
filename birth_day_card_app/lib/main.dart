@@ -12,7 +12,6 @@ class BirthDayCard extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        // backgroundColor: Color.fromARGB(255, 210, 188, 213),
         backgroundColor: Color(0xffD2BCD5),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
