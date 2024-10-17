@@ -6,5 +6,4 @@ My work for Flutter beginner Course by Eng Tharwat Samy @Udemy as a practice for
 ![Basketball Points Counter](Screenshot_1729196320.png)
 ![Business Card](Screenshot_1729197217.png)
 ![Tunes App](Screenshot_1729198327.png)
-
-[![Toku App](<video controls src="Toku App-1.mp4" title="Toku App"></video>)](Toku App.mp4 "Toku App Video")
+![Toku App](Screenshot_1729199873.png)
