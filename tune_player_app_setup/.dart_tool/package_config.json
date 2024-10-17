@@ -326,10 +326,10 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2024-08-21T22:32:21.475938Z",
+  "generated": "2024-10-17T20:44:05.685540Z",
   "generator": "pub",
-  "generatorVersion": "3.5.1",
+  "generatorVersion": "3.5.3",
   "flutterRoot": "file:///C:/src/flutter",
-  "flutterVersion": "3.24.1",
+  "flutterVersion": "3.24.3",
   "pubCache": "file:///C:/Users/omarm/AppData/Local/Pub/Cache"
 }
