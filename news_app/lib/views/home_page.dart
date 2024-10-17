@@ -141,8 +141,14 @@ class _HomePageState extends State<HomePage> {
                         child: EmptyNews(),
                       )
                     : const NewsListViewBuilder(
-                        //   category: 'top'
-                        category: 'environment',
+                        // category: 'top',
+                        // category: 'business',
+                        // category: 'entertainment',
+                        // category: 'sports',
+                        // category: 'health',
+                        // category: 'science',
+                        // category: 'environment',
+                        category: 'technology',
                       ),
               ],
             ),

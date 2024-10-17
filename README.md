@@ -5,5 +5,6 @@ My work for Flutter beginner Course by Eng Tharwat Samy @Udemy as a practice for
 ![Birthday Card](Screenshot_1729196863.png)
 ![Basketball Points Counter](Screenshot_1729196320.png)
 ![Business Card](Screenshot_1729197217.png)
-![Tunes App](Screenshot_1729198327.png)
 ![Toku App](Screenshot_1729199873.png)
+![Tunes App](Screenshot_1729198327.png)
+![News App](Screenshot_1729200987.png)
