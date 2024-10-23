@@ -6,7 +6,8 @@ A new Flutter project.
 
 This project is a starting point for a Flutter application.
 
-![Birthday Card](Screenshot_1729196863.png)
+<img src="Screenshot_1729196863.png" alt="Birthday Card" width="150"/>
+
 A few resources to get you started if this is your first Flutter project:
 
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
