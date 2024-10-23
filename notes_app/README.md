@@ -6,7 +6,7 @@ A new Flutter project.
 
 This project is a starting point for a Flutter application.
 
-![Notes App](Screenshot_1729204308.png)
+<img src="Screenshot_1729204308.png" alt="Notes App" width="150"/>
 
 A few resources to get you started if this is your first Flutter project:
 
