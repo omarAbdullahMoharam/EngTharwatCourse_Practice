@@ -6,7 +6,7 @@ A new Flutter project.
 
 This project is a starting point for a Flutter application.
 
-![Bussiness Card](Screenshot_1729197217.png)
+<img src="Screenshot_1729197217.png" alt="Business Card" width="150"/>
 
 A few resources to get you started if this is your first Flutter project:
 
