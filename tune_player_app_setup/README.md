@@ -6,7 +6,7 @@ A new Flutter project.
 
 This project is a starting point for a Flutter application.
 
-![Tunes Board App](Screenshot_1729198327.png)
+<img src="Screenshot_1729198327.png" alt="Tunes Board App" width="150"/>
 
 A few resources to get you started if this is your first Flutter project:
 
