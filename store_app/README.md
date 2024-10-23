@@ -6,7 +6,7 @@ A new Flutter project.
 
 This project is a starting point for a Flutter application.
 
-![Store Products Page Screen](Screenshot_1729203574.png)
+<img src="Screenshot_1729203574.png" alt="Store Products Page Screen" width="150"/>
 
 A few resources to get you started if this is your first Flutter project:
 
